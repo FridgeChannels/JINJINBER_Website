@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface-page: #ffffff;
+    --surface-elevated: rgba(255, 255, 255, 0.92);
+    --ring-brand: rgba(30, 58, 95, 0.35);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply font-sans antialiased text-zinc-900;
+    background-color: var(--surface-page);
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(59, 130, 246, 0.06), transparent),
+      radial-gradient(900px 500px at 100% 0%, rgba(249, 115, 22, 0.04), transparent),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #f1f5f9 100%);
+  }
+
+  nextjs-portal {
+    position: fixed;
+    inset: 0;
+    display: block;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 2147483646;
+    contain: layout style;
+    pointer-events: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-zinc-200/80 bg-white/90 shadow-sm backdrop-blur-md;
+  }
+}

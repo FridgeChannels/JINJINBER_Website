@@ -1,0 +1,83 @@
+基于你这份 Jinjieber 官网文案，以下是我推荐的**导航栏结构**，以及每一项的设计依据和逻辑：
+
+---
+
+## 🧭 导航栏结构（Desktop）
+
+| 序号 | 一级导航 | 二级下拉菜单 | 对应文案模块 |
+| --- | --- | --- | --- |
+| 1 | **Home** | — | Hero Section |
+| 2 | **About Us** | Our Story · Mission · Why Jinjieber | 📖 About Us + ✅ Why Choose |
+| 3 | **Products** ▾ | Valves（下拉含 Gate / Butterfly / Check / Ball / Globe / Plug / Fire Protection）· Pumps（Centrifugal / Fire / Submersible / Booster）· Pipe Fittings & Accessories | 🔧 Products & Solutions |
+| 4 | **Industries** ▾ | Oil & Gas · Municipal Water · Irrigation · Fire Protection · Power Generation · Building & HVAC | 🏗️ Industries We Serve |
+| 5 | **Capabilities** | Manufacturing · Certifications & Standards | 🏭 Manufacturing + 🏆 Certifications |
+| 6 | **Global Presence** | — | 🌍 Global Presence |
+| 7 | **Contact Us** | — | 📞 Contact / Quote |
+
+**右侧 CTA 按钮：** **[Request a Quote]**（高亮色，始终可见）
+
+---
+
+## 📐 设计依据与逻辑
+
+### 1. **以买家决策路径为主线（Buyer Journey）**
+
+工业品 B2B 买家的浏览路径通常是：
+
+> **你是谁 → 你有什么产品 → 你服务什么行业 → 你有什么能力保障 → 你在哪 → 怎么联系你**
+> 
+
+导航栏从左到右严格遵循这个认知顺序，降低用户的寻找成本。
+
+### 2. **Products 独立且带 Mega Menu 下拉**
+
+- Jinjieber 产品线**极其丰富**（7类阀门 + 4类泵 + 配件），这是核心价值展示区。
+- 采用 **Mega Menu**（大面积下拉菜单，分列展示 Valves / Pumps / Fittings），让工程师和采购人员**一眼定位**目标产品，无需逐页翻找。
+- 这是工业品官网的行业标准做法（参考 Emerson、Flowserve、Watts 等）。
+
+### 3. **Industries 单独成栏，而非合并到 Products**
+
+- 很多 B2B 买家是**按行业搜索**的（比如"fire protection valve supplier"），而不是按产品类型。
+- 单独的 Industries 导航能精准承接**行业关键词的 SEO 流量**，同时让客户快速找到"你懂我这个行业"的信任感。
+
+### 4. **About Us 合并了 "Why Choose Jinjieber"**
+
+- "Why Choose Us" 本质上是 About 的延伸（差异化定位），独立成导航项会让导航过长。
+- 放在 About Us 的二级页面或页面下半部分，让用户在了解公司后自然过渡到信任建立。
+
+### 5. **Capabilities 合并了 Manufacturing + Certifications**
+
+- 制造能力和认证资质在买家心中是同一个决策维度：**"你有没有能力交付合格产品？"**
+- 合并后减少一级导航项数量（保持 **6-7 项**的最佳实践），同时内容更紧凑有力。
+
+### 6. **Global Presence 保留独立位置**
+
+- Jinjieber 的全球布局（中国制造 + 北美 + 中东 + 欧洲）是**核心竞争力**之一。
+- 对于国际买家（尤其美国、中东客户），看到本地有仓储/办事处会极大提升信任。
+- 这一项如果藏在 About 里会被忽略，独立展示回报更高。
+
+### 7. **CTA 按钮常驻右侧**
+
+- "Request a Quote" 是整个官网的**终极转化目标**。
+- 无论用户浏览到哪个页面，右上角始终有高亮 CTA，减少转化路径摩擦。
+- 这是 B2B 工业品网站的标配（参考 Victaulic、Mueller Water Products 等）。
+
+### 8. **Testimonials / Blog / Downloads 不进主导航**
+
+- 推荐放在 **Footer 导航** 或各页面内嵌：
+    - **Testimonials** → 嵌入 About Us 或各 Industry 页面（作为社会证明）
+    - **Blog / Knowledge Center** → Footer 或未来内容量大时升级为一级导航
+    - **Downloads / Resources** → Footer 或 Capabilities 页面内
+- 原因：初期内容量有限时，导航项过多会显得空洞；等内容积累到足够规模再升级。
+
+---
+
+## 📱 移动端适配建议
+
+- 使用**汉堡菜单（☰）**，展开后保持同样的层级结构
+- Products 和 Industries 用**可展开的手风琴（Accordion）**展示二级项
+- "Request a Quote" 按钮在移动端做**底部悬浮固定栏**
+
+---
+
+这套导航结构做到了 **信息完整但不臃肿、路径清晰且符合行业惯例**，能同时服务好"快速找产品"的工程师和"评估供应商"的采购决策者两类核心用户。

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <title>Image placeholder</title>
+  <rect width="800" height="600" fill="#18181b"/>
+  <rect x="2" y="2" width="796" height="596" stroke="#3f3f46" stroke-width="2" stroke-dasharray="14 10" fill="none" rx="4"/>
+  <rect x="320" y="210" width="160" height="120" rx="8" stroke="#52525b" stroke-width="2" fill="#27272a"/>
+  <path d="M380 250 L420 285 L400 285 L400 310 L360 310 L360 285 L340 285 Z" fill="#52525b"/>
+  <text x="400" y="370" text-anchor="middle" fill="#71717a" font-family="ui-sans-serif,system-ui,sans-serif" font-size="22" font-weight="600">PLACEHOLDER</text>
+</svg>
