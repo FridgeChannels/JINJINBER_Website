@@ -261,10 +261,10 @@ export const jinjieberMock = {
   contact: {
     title: "Ready to Engineer Your Next Project Together?",
     description: "Whether you need a single prototype valve or a full container of fire pumps, our team is ready to help. Tell us about your project and receive a competitive quote within 24 hours.",
-    email: "sales@jinjieber.com",
+    email: "xhzhang@jinjieber.com",
     phoneChina: "+86-XXX-XXXX-XXXX",
     phoneUsa: "+1-XXX-XXX-XXXX",
-    address: "[Full Address, China]",
+    address: "1104 ZhongYuan Plaza, Shijiazhuang, China.",
     website: "www.jinjieber.com"
   }
 };

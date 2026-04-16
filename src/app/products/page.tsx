@@ -191,19 +191,7 @@ function ProductsContent() {
               ))}
             </div>
 
-            {/* Inquiry Card - Premium Style */}
-            <div className="hidden lg:block p-10 bg-zinc-950 text-white relative overflow-hidden">
-              <div className="relative z-10 space-y-6">
-                <div className="h-10 w-px bg-[#4f25e4]" />
-                <p className="text-lg font-bold leading-tight">
-                  Precision data for mission-critical engineering.
-                </p>
-                <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-zinc-300 transition-colors uppercase tracking-widest pt-4">
-                  Request CAD Files <ChevronRight className="h-4 w-4" />
-                </Link>
-              </div>
-              <div className="absolute -bottom-8 -right-8 h-32 w-32 bg-[#4f25e4] blur-[80px] opacity-20" />
-            </div>
+            {/* 删除了 Inquiry Card */}
           </div>
         </aside>
 
@@ -245,18 +233,7 @@ function ProductsContent() {
             )}
           </AnimatePresence>
 
-          {/* Bottom Contact Section */}
-          <SectionReveal>
-             <div className="mt-32 p-12 md:p-20 bg-zinc-50 border border-zinc-100 flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div className="space-y-4 text-center lg:text-left">
-                   <h3 className="text-3xl font-bold text-zinc-900 text-balance lg:text-4xl">Complete Industrial Catalog</h3>
-                   <p className="text-lg text-zinc-500 font-medium">Access detailed technical specifications for our entire fleet.</p>
-                </div>
-                <button className="bg-[#4f25e4] text-white px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] transition-all hover:scale-105 hover:bg-zinc-900 shadow-xl shadow-[#4f25e4]/20">
-                  Download v8.2 Guide
-                </button>
-             </div>
-          </SectionReveal>
+          {/* 删除了 Bottom Contact Section */}
         </main>
       </div>
     </div>

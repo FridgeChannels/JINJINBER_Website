@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import { slugify } from "@/lib/slugify";
 import { ButtonLink } from "@/components/ui/Button";
+import { ChevronRight } from "lucide-react";
 
 interface JinjieberIndustriesProps {
   isTeaser?: boolean;
@@ -26,50 +27,71 @@ export const JinjieberIndustries: React.FC<JinjieberIndustriesProps> = ({ isTeas
         </div>
 
         <div className={cn("mt-20 grid gap-12 md:grid-cols-2")}>
-          {industries.map((ind, idx) => (
-            <article
-              key={idx}
-              id={slugify(ind.title)}
-              className={cn(
-                "overflow-hidden bg-white transition-all duration-500 hover:bg-white flex flex-col scroll-mt-24 border border-zinc-100 hover:border-[#4f25e4]/20",
-                pxn.radiusGrid,
-                "shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)]",
-              )}
-            >
-              {ind.image ? (
-                <div className={cn("relative overflow-hidden aspect-[16/9]")}>
-                  <img
-                    src={ind.image}
-                    alt={ind.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+          {industries.map((ind, idx) => {
+            const industrySlug = slugify(ind.title);
+            const cardContent = (
+              <article
+                className={cn(
+                  "overflow-hidden bg-white transition-all duration-500 hover:bg-white flex flex-col scroll-mt-24 border border-zinc-100 hover:border-[#4f25e4]/20 h-full group",
+                  pxn.radiusGrid,
+                  "shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)]",
+                  isTeaser && "cursor-pointer"
+                )}
+              >
+                {ind.image ? (
+                  <div className={cn("relative overflow-hidden aspect-[16/9]")}>
+                    <img
+                      src={ind.image}
+                      alt={ind.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                ) : (
+                  <PlaceholderMedia
+                    alt={`${ind.title} industry placeholder`}
+                    aspectClassName="aspect-[16/9]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="rounded-none ring-0"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-                </div>
-              ) : (
-                <PlaceholderMedia
-                  alt={`${ind.title} industry placeholder`}
-                  aspectClassName="aspect-[16/9]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="rounded-none ring-0"
-                />
-              )}
-              <div className={cn("flex flex-col flex-1 p-8 md:p-10")}>
-                <h3 className={cn("text-2xl font-bold text-zinc-900")}>{ind.title}</h3>
-                {!isTeaser && (
-                  <>
-                    <p className="mt-4 text-base leading-relaxed text-zinc-500 flex-1 font-medium">
+                )}
+                <div className={cn("flex flex-col flex-1 p-8 md:p-10")}>
+                  <div className="flex items-center justify-between">
+                    <h3 className={cn("text-2xl font-bold text-zinc-900")}>{ind.title}</h3>
+                    {isTeaser && (
+                      <ChevronRight className="h-5 w-5 text-zinc-300 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#4f25e4]" />
+                    )}
+                  </div>
+                  {!isTeaser ? (
+                    <>
+                      <p className="mt-4 text-base leading-relaxed text-zinc-500 flex-1 font-medium">
+                        {ind.description}
+                      </p>
+                      {ind.keyProducts && (
+                        <div className="mt-8 pt-8 border-t border-zinc-100">
+                          <div className="text-sm text-zinc-700 leading-relaxed font-semibold">{ind.keyProducts}</div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <p className="mt-4 text-sm text-zinc-500 font-medium line-clamp-2">
                       {ind.description}
                     </p>
-                    {ind.keyProducts && (
-                      <div className="mt-8 pt-8 border-t border-zinc-100">
-                        <div className="text-sm text-zinc-700 leading-relaxed font-semibold">{ind.keyProducts}</div>
-                      </div>
-                    )}
-                  </>
-                )}
+                  )}
+                </div>
+              </article>
+            );
+
+            return isTeaser ? (
+              <Link key={idx} href={`/industries#${industrySlug}`} className="block h-full">
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={idx} id={industrySlug}>
+                {cardContent}
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
 
         {isTeaser && (

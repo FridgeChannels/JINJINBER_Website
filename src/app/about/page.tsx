@@ -48,8 +48,8 @@ export default function AboutPage() {
 
   return (
     <PageShell currentPath="/about">
-      {/* Hero: min-height so the strip isn’t only vertical padding (absolute fill Image doesn’t contribute to parent height). */}
-      <div className="relative min-h-[320px] overflow-hidden border-b border-zinc-100 bg-zinc-950 py-14 md:min-h-[380px] md:py-16 lg:min-h-[420px]">
+      {/* Hero Section - Compact with content overlay */}
+      <div className="relative overflow-hidden border-b border-zinc-100 bg-zinc-950 py-14 md:py-16">
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/about-banner.png"
@@ -60,6 +60,23 @@ export default function AboutPage() {
             sizes="100vw"
             unoptimized
           />
+        </div>
+
+        <div className="relative mx-auto w-full max-w-7xl px-4 md:px-8 lg:max-w-none lg:px-10 lg:pl-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl space-y-4"
+          >
+            <div className="h-px w-16 bg-[#4f25e4] drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]" />
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
+              Engineering <br /> Heritage.
+            </h1>
+            <p className="text-base text-white/90 font-medium max-w-2xl leading-relaxed md:text-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+              An unwavering commitment to precision and quality since 1988. Discover the innovation and global leadership behind the Jinjieber legacy.
+            </p>
+          </motion.div>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ import { jinjieberMock } from "@/mock/jinjieber";
 import { PixendSectionLabel } from "@/components/pixend/PixendPrimitives";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { cn } from "@/lib/cn";
-import { Mail, Phone, MapPin, Globe, ChevronRight } from "lucide-react";
+import { Mail, MapPin, Globe, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const JinjieberContact: React.FC = () => {
@@ -48,41 +48,22 @@ export const JinjieberContact: React.FC = () => {
                    <Mail className="h-6 w-6" />
                  </div>
                  <div className="space-y-2">
-                   <div className="text-xl font-bold text-zinc-900"><a href="mailto:enochmei2024@gmail.com" className="hover:text-[#4f25e4] transition-colors border-b-2 border-transparent hover:border-[#4f25e4]">enochmei2024@gmail.com</a></div>
+                   <div className="text-xl font-bold text-zinc-900"><a href={`mailto:${contact.email}`} className="hover:text-[#4f25e4] transition-colors border-b-2 border-transparent hover:border-[#4f25e4]">{contact.email}</a></div>
                  </div>
               </div>
 
-              <div className="flex items-start gap-8 group">
-                 <div className="h-14 w-14 shrink-0 bg-zinc-900 flex items-center justify-center text-white transition-transform group-hover:scale-110">
-                   <Phone className="h-6 w-6" />
-                 </div>
-                 <div className="space-y-4">
-                   <div className="flex flex-col gap-2 text-lg font-bold text-zinc-900">
-                     <div className="flex items-center gap-3">
-                        <span className="text-zinc-400 font-medium text-xs lg:min-w-[60px]">Office</span>
-                        <span>+1 213 824 2886</span>
-                     </div>
-                     <div className="flex items-center gap-3 text-[#4f25e4]">
-                        <span className="text-zinc-400 font-medium text-xs lg:min-w-[60px]">Direct</span>
-                        <span>+1 626 831 0588</span>
-                     </div>
-                   </div>
-                 </div>
-              </div>
+
 
               <div className="flex items-start gap-8 group">
                  <div className="h-14 w-14 shrink-0 bg-zinc-900 flex items-center justify-center text-white transition-transform group-hover:scale-110">
                    <MapPin className="h-6 w-6" />
                  </div>
                  <div className="space-y-6">
-                   <div className="flex flex-col gap-10 text-base font-medium text-zinc-500 leading-relaxed max-w-sm">
-                      <div className="space-y-2 border-l-2 border-zinc-100 pl-6 hover:border-[#4f25e4] transition-colors">
-                        <div>17800 CASTLETON ST STE 665 <br /> CITY OF INDUSTRY, CA 91748</div>
-                      </div>
-                      <div className="space-y-2 border-l-2 border-zinc-100 pl-6 hover:border-[#4f25e4] transition-colors">
-                        <div>Building 3, Evergrande Financial Plaza <br /> Xiangfu Middle Rd, Changsha, Hunan</div>
-                      </div>
-                   </div>
+                    <div className="flex flex-col gap-10 text-base font-medium text-zinc-500 leading-relaxed max-w-sm">
+                       <div className="space-y-2 border-l-2 border-zinc-100 pl-6 hover:border-[#4f25e4] transition-colors">
+                         <div>{contact.address}</div>
+                       </div>
+                    </div>
                  </div>
               </div>
             </div>

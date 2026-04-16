@@ -4,7 +4,7 @@ import { Mail, Globe } from "lucide-react";
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-zinc-950 text-white mt-auto overflow-hidden relative">
-      <div className="mx-auto max-w-7xl px-4 md:px-8 py-32">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 py-16 md:py-20">
         <div className="grid gap-20 lg:grid-cols-12">
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
                   <div className="h-10 w-10 shrink-0 bg-white/5 flex items-center justify-center group-hover:bg-[#4f25e4] transition-colors">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <div className="text-[11px] font-bold text-white/60 group-hover:text-white transition-colors">ENOCHMEI2024@GMAIL.COM</div>
+                  <div className="text-[11px] font-bold text-white/60 group-hover:text-white transition-colors uppercase">XHZHANG@JINJIEBER.COM</div>
                 </div>
                 <div className="flex items-center gap-4 group">
                   <div className="h-10 w-10 shrink-0 bg-white/5 flex items-center justify-center group-hover:bg-[#4f25e4] transition-colors">
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="mt-16 md:mt-20 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">
             © {new Date().getFullYear()} JINJIEBER INDUSTRIAL GROUP. ALL RIGHTS RESERVED.
           </div>

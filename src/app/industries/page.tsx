@@ -8,7 +8,7 @@ import { jinjieberMock } from "@/mock/jinjieber";
 import { cn } from "@/lib/cn";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
-import { ChevronRight, ShieldCheck, Factory } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { slugify } from "@/lib/slugify";
 
@@ -91,21 +91,14 @@ export default function IndustriesPage() {
                 ))}
               </nav>
 
-              <div className={cn(
-                "hidden lg:block mt-16 p-10 bg-zinc-950 text-white relative overflow-hidden",
-                pxn.radiusGrid
-              )}>
-                <div className="relative z-10 space-y-6">
-                   <div className="h-px w-12 bg-[#4f25e4]" />
-                   <div className="h-10 w-10 bg-[#4f25e4] flex items-center justify-center">
-                     <ShieldCheck className="h-5 w-5 text-white" />
-                   </div>
-                   <p className="text-xs text-white/50 leading-relaxed font-medium">
-                     Engineered to exceed API, AWWA, and UL/FM benchmarks for high-stakes environments.
-                   </p>
-                </div>
-                <div className="absolute -bottom-12 -right-12 h-48 w-48 bg-[#4f25e4] blur-[100px] opacity-20 rounded-full" />
-              </div>
+              <a 
+                href="/contact" 
+                className={cn(
+                  "flex items-center justify-center w-full px-8 py-6 bg-[#4f25e4] text-white text-xs font-bold uppercase tracking-[0.3em] transition-all hover:scale-[1.05] hover:bg-zinc-900 shadow-xl shadow-[#4f25e4]/20"
+                )}
+              >
+                Request Specs
+              </a>
             </div>
           </aside>
 
@@ -143,43 +136,17 @@ export default function IndustriesPage() {
                 </div>
 
                 {/* Industry Details */}
-                <div className="grid gap-16 lg:grid-cols-[1fr_360px]">
-                  <div className="space-y-10">
-                    <div className="flex items-center gap-4 text-[#4f25e4] font-bold text-[10px] uppercase tracking-[0.4em]">
-                       <span className="h-1.5 w-1.5 rounded-full bg-[#4f25e4]" />
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-zinc-900 tracking-tight leading-none">
-                      {activeIndustry.title}
-                    </h2>
-                    <div className="prose prose-zinc max-w-none">
-                       <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-                         {activeIndustry.description}
-                       </p>
-                    </div>
+                <div className="max-w-4xl space-y-10">
+                  <div className="flex items-center gap-4 text-[#4f25e4] font-bold text-[10px] uppercase tracking-[0.4em]">
+                     <span className="h-1.5 w-1.5 rounded-full bg-[#4f25e4]" />
                   </div>
-
-                  {/* Key Products Sidebar in Content - Refined Style */}
-                  <div className="space-y-8">
-                     <div className={cn(
-                       "bg-zinc-50 p-10 border border-zinc-100 flex flex-col justify-center",
-                       pxn.radiusGrid
-                     )}>
-                        <div className="flex items-center gap-3 text-zinc-400 font-bold text-[10px] uppercase tracking-[0.2em] mb-8">
-                           <Factory className="h-3.5 w-3.5" />
-                        </div>
-                        <div className="text-lg font-bold text-zinc-900 leading-relaxed">
-                          {activeIndustry.keyProducts || "Technical data available in full catalog."}
-                        </div>
-                     </div>
-
-                     <a 
-                       href="/contact" 
-                       className={cn(
-                         "flex items-center justify-center w-full px-8 py-6 bg-[#4f25e4] text-white text-xs font-bold uppercase tracking-[0.3em] transition-all hover:scale-[1.05] hover:bg-zinc-900 shadow-xl shadow-[#4f25e4]/20"
-                       )}
-                     >
-                       Request Specs
-                     </a>
+                  <h2 className="text-4xl md:text-6xl font-bold text-zinc-900 tracking-tight leading-none">
+                    {activeIndustry.title}
+                  </h2>
+                  <div className="prose prose-zinc max-w-none">
+                     <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+                       {activeIndustry.description}
+                     </p>
                   </div>
                 </div>
               </motion.div>
@@ -190,4 +157,3 @@ export default function IndustriesPage() {
     </PageShell>
   );
 }
-
