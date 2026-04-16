@@ -1,0 +1,66 @@
+# Strainer Valve product details (Enoch Industry)
+
+## 1) Y-Type Strainer
+**Specifications**
+- Nominal Pressure: PN10, 16, 25, and 40.
+- Nominal Diameter: DN15 ~ DN600 and larger.
+- Valve Body Materials: Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, etc.
+- Connection Methods: Flange, Threaded, Butt Weld
+
+**Product description**
+A Y-type strainer is a Y-shaped pipeline filtration device. It is a type of coarse filter that uses a metal mesh to intercept and filter mechanical impurities such as rust, silt, and debris from fluids (liquids or gases). This protects key equipment in the pipeline system, such as valves, pumps, flow meters, and heat exchangers, from clogging and wear.
+
+**Product function**
+Protecting Critical Equipment / Purifying Media / Improving Reliability and Stability
+
+- Prevents pump impeller wear or jamming. Ensures the measurement accuracy and service life of instruments such as flow meters and pressure gauges.
+- Prevents damage or jamming of the sealing surfaces of control valves, pressure reducing valves, etc., ensuring their regulating function.
+- Prevents blockage of heat exchanger or nozzle flow channels, maintaining efficient heat transfer or jetting effects.
+- In processes requiring high fluid purity (food, beverage, pharmaceutical, semiconductor manufacturing), even minute impurities can contaminate the entire batch of products—Y-type filters provide crucial purification.
+- By removing impurities, they reduce system downtime risk due to blockage, wear, or malfunction, ensuring production continuity and lowering maintenance costs/downtime loss.
+
+**Value advantage**
+- Simple, durable structure
+- Low flow resistance, low pressure drop
+- Small footprint, flexible installation
+- Low cost, good economical efficiency
+
+**Application scenario**
+- Water supply and drainage systems: Protect water pumps, water meters, and water supply networks.
+- HVAC systems: Prevent blockage at the inlets of boilers, heat exchangers, and cooling towers.
+- Petrochemical industry: Filters oils and chemicals.
+- Power industry: Used in fuel, lubrication systems, and cooling water.
+- Industrial production: Protects precision equipment such as spray equipment, injection molding machines, and air compressors.
+- Irrigation systems: Prevents nozzle blockage.
+
+## 2) Stainless Steel Filters
+**Specifications**
+- Filtration Fineness: 1 to 100 μm (optional)
+- Operating Temperature: -20°C ~ 120°C (depending on seals)
+- Housing Material: 304, 316L, etc.
+- Connections: Flange, Clamp, Threaded
+
+**Product description**
+A stainless steel filter is a type of filtration equipment made primarily of stainless steel (primarily 304, 304L, 316, and 316L). It uses internally installed filter elements (such as screens, filter bags, filter elements, or filter baskets) to intercept and remove solid particles from fluids (liquids or gases), thereby purifying, separating, or recovering them.
+
+**Product function**
+Solid-Liquid / Solid-Gas Separation, Equipment Protection, Improved Product Purity
+
+- Solid-Liquid Separation: Removes suspended solid particles from a liquid (e.g., removing silt and rust in water treatment; removing impurities from raw materials in food and beverage).
+- Solid-Gas Separation: Removes dust, moisture, oil mist, and particulate matter from gases or air (e.g., filtering compressed air downstream of an air compressor).
+- Installed upstream of critical equipment such as pumps, valves, nozzles, flow meters, and heat exchangers, it prevents solid particles from entering, avoiding wear, blockage, or damage, and extending equipment lifespan.
+- In chemical, pharmaceutical, and food industries, it ensures the purity of final products, avoids contamination, and guarantees product quality.
+
+**Value advantage**
+- Excellent durability and long life
+- Excellent corrosion resistance
+- Excellent high temperature and high pressure resistance
+- High hygiene and easy cleanability
+
+**Application scenario**
+- Industrial Water Treatment: Raw water pretreatment, circulating cooling water, and boiler feed water.
+- Food & Beverage: Filtration of syrups, juices, beer, cooking oil, and process water.
+- Petrochemical: Filtration of crude oil, refined oils, solvents, and chemical raw materials.
+- Pharmaceutical & Bioengineering: Sterile filtration of purified water, water for injection, pharmaceutical solutions, and compressed air.
+- Electroplating & Coating: Purification of plating solutions, paints, and coatings.
+- Power & Metallurgy: Filtration of fuel, lubricating oil, and hydraulic oil.

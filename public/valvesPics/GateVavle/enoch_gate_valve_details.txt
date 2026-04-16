@@ -1,0 +1,95 @@
+# Enoch Industry Gate Valve Product Details Text
+Collected from:
+- https://www.enoch-industry.com/product-detail/gate-valve-45x
+- https://www.enoch-industry.com/product-detail/stainless-steel-gate-valve
+- https://www.enoch-industry.com/product-detail/knife-gate-valve
+
+## Gate Valve 45X
+Nominal Pressure: PN10, PN16, PN25.
+Nominal Diameter: DN50 ~ DN1200.
+Body Material: Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, etc.
+Seal Material: Nitrile (NBR), EPDM, etc., selected based on the medium temperature and operating environment.
+
+### Product description
+The 45X hydraulically operated check valve utilizes the inherent pressure of the medium in the pipeline and hydraulic principles to achieve opening, closing, and check function. Its primary design objective is to eliminate or significantly reduce the water hammer effect (the "bang" and pressure surge) produced by conventional check valves when closing. Therefore, it is also known as a "silent check valve" or "silent check valve."
+
+### Product function
+- Connecting or Cutting Off the Medium
+- Bidirectional Flow and Sealing
+
+By rotating the handwheel or wrench, the valve plate moves vertically up and down within the valve body, thus fully opening or closing the pipeline. In the fully open state, the flow path is unobstructed with minimal resistance; in the fully closed state, it reliably cuts off the flow of the medium.
+The 45X gate valve has a symmetrical flow path, allowing the medium to flow in from either side of the valve and out from the other, without any installation direction requirement. Its unique elastic sealing structure ensures excellent sealing performance in both directions.
+
+### Value advantage
+- Core Advantage: Effectively eliminates water hammer and operates quietly
+- Excellent sealing performance and reliable non-return function
+- Low flow resistance coefficient and energy saving
+- High degree of automation, no external power required
+
+### Application scenario
+Water supply and drainage systems: Pump outlets for high-rise buildings and municipal water supplies.
+Fire protection systems: Fire pump outlets to prevent water hammer damage during pump shutdown.
+Industrial circulating water systems: Cooling circulation systems and central air conditioning systems.
+Sewage treatment plants: Pump outlets.
+Water conservancy projects: Water intake and water transfer pumping stations.
+
+---
+
+## Stainless Steel Gate Valve
+Nominal Pressure: PN6, 10, 16, 25, 40, 64, 100.
+Nominal Diameter: DN15 ~ DN400, and even larger.
+Valve Body Material: 304/304L, 316/316L, etc.
+Connection Methods: Threaded, flanged, wafer, welded
+
+### Product description
+A stainless steel gate valve is primarily made of stainless steel. It is a shut-off valve whose core component is a gate (like a plate). Driven by the valve stem, it moves up and down perpendicular to the channel axis, thereby connecting or disconnecting the pipeline. Its primary function is to shut off or connect the medium in the pipeline and is generally not used for flow regulation.
+
+### Product function
+- Connecting and disconnecting media
+
+This valve provides full-open or full-closed control of the media (liquid, gas) in the pipeline. It is not a valve for precise flow regulation, but rather an "on/off" type valve.
+
+### Value advantage
+- Minimal flow resistance, energy-efficient and efficient
+- Relatively labor-saving opening and closing
+- Reliable sealing performance
+- Unrestricted flow direction
+
+### Application scenario
+Petrochemical Industry: Transporting various corrosive chemicals and petroleum products.
+Water Supply and Wastewater Treatment: Municipal water supply, purified water systems, and reclaimed water reuse.
+Food and Pharmaceutical Industry: Applications with high hygiene requirements typically utilize 304 or 316L stainless steel. Shipbuilding and Offshore Engineering: Resistant to seawater corrosion.
+Power Industry: Thermal and cooling water systems in power plants.
+Heating, Ventilation, and Air Conditioning (HVAC): Hot and cold water systems.
+
+---
+
+## Knife Gate Valve
+Nominal Pressure: PN6, 10, 16.
+Nominal Diameter: DN25 ~ DN1500 (1" ~ 60"), and even larger.
+Body Material: Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel (304, 316, 316L), duplex steel, etc.
+Connection Methods: Wafer, flange, threaded, bevel gear/electric actuator
+
+### Product description
+The knife gate valve, also known as a knife-shaped gate valve, knife gate valve, or slurry valve, is a uniquely designed gate valve. Its core component is a blade-like, beveled gate disc. This design enables it to easily cut through and handle viscous or scaling media containing solid particles, fibers, slurries, and other materials. It is widely used in demanding applications where conventional valves are prone to blocking and leakage.
+
+### Product function
+- Connecting and Cutting Off Media
+
+"Knife" Shape Design: The gate's bottom features a sharp cutting edge that easily cuts and severs media such as fibers, pulp, particles, and sediments, effectively preventing media blockage in the flow channel.
+Grooveless Structure: Unlike ordinary gate valves, the internal passage of a knife gate valve is typically smooth, without grooves. This prevents media from accumulating in these areas, avoiding jamming and damage to the sealing surface.
+
+### Value advantage
+- Excellent shutoff and flow capabilities
+- Minimal flow resistance, energy-saving and efficient
+- Compact structure and light weight
+- Self-cleaning function
+
+### Application scenario
+Paper Industry: Pulp, wastewater, chemicals.
+Wastewater Treatment: Raw water, sludge, and wastewater containing solid particles.
+Mining and Metallurgy: Slurry, tailings, pulverized coal, and ash.
+Food and Pharmaceutical: Chocolate, syrup, fruit pulp, and particulate matter (sanitary design required).
+Chemical Industry: Granular, powdered, and corrosive slurries.
+Power Plants: Ash handling systems and fly ash treatment.
+Construction Industry: Cement and mortar.

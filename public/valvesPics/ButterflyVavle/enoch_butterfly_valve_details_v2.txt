@@ -1,0 +1,149 @@
+Butterfly Valve 产品介绍信息汇总
+
+----------------------------------------
+1) Wafer-Type Butterfly Valve
+- Nominal Pressure: PN6, 10, 16, 25.
+- Nominal Diameter: DN 50 to DN 2000, and even larger.
+- Body Materials: Gray Cast Iron (HT250), Ductile Iron (QT400), Cast Steel (WCB), Stainless Steel (CF8/304, CF8M/316, CF3/304L, CF3M/316L), Duplex Steel, etc.
+- Connection Type: Wafer-Type.
+
+## Product description
+The wafer-type butterfly valve has no flanges on its body. Instead, it is clamped directly between two pipe flanges using a few bolts threaded through holes in the valve body. Its key features are short length, light weight, and low cost.
+
+## Product function
+Connecting and Cutting Off; Flow Regulation.
+Fully open/close by rotating the butterfly plate 90°. Fully open: plate parallel to fluid direction, flow path approximately straight. Fully closed: plate perpendicular, sealing ring presses against valve seat to seal and cut off medium. The opening can stop anywhere between 0° and 90° to control flow rate/pressure.
+
+## Value advantage
+- Compact structure and light weight
+- Low cost and good economic efficiency
+- Quick opening and closing, easy operation
+- Low fluid resistance
+
+## Application scenario
+- Water supply and drainage systems: municipal water supply, sewage treatment, fire protection systems
+- Heating, ventilation, and air conditioning (HVAC): chilled water, hot water, cooling water systems
+- Chemical industry: various non-corrosive chemical liquids
+- Power: circulating water and cooling water systems
+- Food and pharmaceutical: sanitary designs used for material handling
+- Shipbuilding: seawater, ballast water, bilge water systems
+- Compressed Air and Gas: low-pressure air and gas pipelines
+
+----------------------------------------
+2) Lug Butterfly Valve
+- Nominal Pressure: PN6, 10, 16, 25.
+- Nominal Diameter: DN50 ~ DN1200 and larger.
+- Body Materials: Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel (CF8/304, CF8M/316), Copper Alloy.
+- Connection Type: Double-lug wafer-type.
+
+## Product description
+A lug butterfly valve is a wafer-type butterfly valve with bolt-hole lugs on both ends of the valve body. Bolts pass directly through these lugs to secure the valve between two pipe flanges without passing through the valve interior.
+
+## Product function
+Shutdown and Sealing; Flow Regulation; Bidirectional Flow Blocking.
+Fully open/close by rotating the butterfly plate 90°. Closed state: plate perpendicular, blocking flow; valve seat and plate edge seal tightly to ensure minimal leakage. Opening angle can be controlled anywhere between 0° and 90° to regulate flow. Standard design allows pressure from either direction when closed and effective sealing when pressure released from one side.
+
+## Value advantage
+- Easy installation, especially suitable for terminal equipment
+- Compact structure and light weight
+- Highly cost-effective
+- Low flow resistance and fast opening/closing
+
+## Application scenario
+- Water supply and drainage systems: municipal water supply, sewage treatment plants, fire protection systems
+- HVAC: hot/cold water circulation systems
+- Industrial processes: on/off control of non-corrosive media (chemical, food, pharmaceutical, paper industries)
+- Shipbuilding: seawater and ballast water systems
+- Energy industry: power plant cooling water systems
+
+----------------------------------------
+3) D71FX Butterfly Valve
+- Nominal Pressure: PN 6, 10, 16 (fluoroplastic lining generally not resistant to high pressures).
+- Nominal Diameter: DN50 ~ DN300, and even larger.
+- Applicable Temperature: generally -20°C to +150°C (depending on fluoroplastic type; PTFE can withstand higher).
+- Applicable Media: acids, alkalis, salts, organic solvents and other highly corrosive media (e.g., sulfuric acid, hydrochloric acid, nitric acid, sodium hydroxide, brine, organic solvents).
+- Leakage Rating: generally zero leakage or Class VI / Class V sealing as per ANSI B16.104.
+
+## Product description
+D71FX is a manually operated wafer-type butterfly valve with internal contact areas lined with fluoroplastic.
+- D: butterfly valve
+- 7: manual actuation
+- 1: wafer-type connection
+- F: fluoroplastic lining/sealing
+- X: disc is rubber
+
+## Product function
+Connecting or Cutting Off the Medium; Flow Adjustment.
+Rotating handle 90° opens/closes pipeline; fully open: plate parallel with low flow resistance. Fully closed: PTFE soft sealing ring fits tightly against seat to seal and prevent leakage. Handle position between 0° and 90° changes opening to adjust flow/pressure.
+
+## Value advantage
+- Excellent corrosion resistance
+- Excellent sealing performance
+- Low fluid resistance, energy saving
+- Easy and flexible operation
+
+## Application scenario
+- Chemical Industry: process piping for acid/alkali/salt production lines
+- Pharmaceutical: transport of corrosive materials in API production
+- Pesticide Industry: corrosive chemicals
+- Non-ferrous metallurgy: electrolyte and acid systems in hydrometallurgy
+- Environmental Protection: wastewater treatment, acid mist purification systems
+- Petrochemical: auxiliary pipelines for some corrosive media
+
+----------------------------------------
+4) D371 X Butterfly Valve
+- Nominal Pressure: PN6, 10, 16.
+- Nominal Diameter: DN50 ~ DN1200 and larger.
+- Applicable Temperature: depends on seat seal material, typically -20°C to +120°C (rubber seals); PTFE seals may handle other ranges.
+- Applicable Media: water, sewage, air, steam, oil, gas, corrosive and non-corrosive fluids depending on body and seal materials.
+- Leakage Level: soft-sealed butterfly valves can generally meet “zero leakage” (ANSI Class VI).
+
+## Product description
+D371 butterfly valve is a worm gear drive, wafer-type, centerline butterfly valve.
+- D: butterfly valve
+- 3: worm gear drive
+- 7: wafer-type connection
+- 1: centerline structure
+
+## Product function
+Cutting Off and Connecting the Medium; Flow Regulation.
+Rotating worm gear turns stem and plate 90° to fully open/close the pipeline; quick operation suits switch valve. Worm gear angle between 0° and 90° changes opening to regulate flow/pressure.
+
+## Value advantage
+- Compact structure, lightweight, space-saving
+- Quick opening and closing, easy operation
+- Low fluid resistance, energy saving
+- Excellent sealing performance
+
+## Application scenario
+- Water supply/drainage and wastewater treatment: urban networks, pumping stations, sewage treatment
+- HVAC: hot/cold water, cooling water circulation
+- Energy and power: power plant cooling and circulating water systems
+- Petrochemical: low corrosion process piping
+- Metallurgy, papermaking, pharmaceuticals and other industrial sectors
+
+----------------------------------------
+5) Pot-Groove Clamp-Type Butterfly Valve
+- Nominal Pressure: PN10, 16, 25.
+- Nominal Diameter: DN50 ~ DN600 (2" ~ 24").
+- Body Material: Ductile Iron (common), Cast Steel, Stainless Steel (304, 316), Copper, etc.
+- Seal Material: Nitrile (NBR), EPDM, etc.
+
+## Product description
+A pot-groove clamp-type butterfly valve combines grooved (clamp) connection features with a wafer-type butterfly valve body. It lacks flanges and is clamped between two pipes using clamps.
+
+## Product function
+Connecting and Cutting Off Media; Flow Regulation.
+Rotating handle/turbine/actuator rotates plate within 90° to fully open/close pipeline controlling flow (water, air, oil). Fixing plate at intermediate angle changes opening area for coarse flow adjustment.
+
+## Value advantage
+- Extremely easy and fast installation
+- Compact structure, space-saving
+- Easy maintenance and replacement
+- Suitable for certain pipes/piping systems
+
+## Application scenario
+- Fire sprinkler systems
+- Water supply and drainage: municipal, building water, sewage treatment
+- HVAC: hot/cold water circulation systems
+- Industrial piping: food, beverage, pharmaceutical (frequent cleaning/maintenance), plus mining and power plant pipelines

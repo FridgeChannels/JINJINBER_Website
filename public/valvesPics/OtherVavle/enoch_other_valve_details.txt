@@ -1,0 +1,59 @@
+# Other Valve product details (Enoch Industry)
+
+## 1) Hydraulic Control Valve
+**Specifications**
+- Nominal Pressure: PN10, 16, 25, 40.
+- Nominal Diameter: DN15 ~ DN1000, and even larger.
+- Body Materials: Gray Cast Iron (HT250), Ductile Iron (QT450-10), Cast Steel (WCB), Stainless Steel (CF8/304, CF8M/316), Copper Alloy, etc.
+- Connections: Flange, Threaded.
+
+**Product description**
+A hydraulic control valve uses the pressure, flow rate, or liquid level of the medium (water) in a pipeline as a power source. Through a pre-set pilot valve and control system, it automatically opens, closes, or regulates the main valve.
+
+**Product function**
+Remote control switch function / precise adjustment function
+
+- In large or complex piping systems with valves in inconvenient locations (heights, underground wells), a pilot valve can be installed in a convenient location (e.g., control room) to remotely open/close the main pipeline valve.
+- Stabilizes parameters such as pressure and flow within the required range according to set values; if parameters deviate, it automatically adjusts valve opening to restore stability.
+
+**Value advantage**
+- Highly automated, no external power required
+- Functional integration, multi-purpose valve
+- Smooth operation and high reliability
+- Improved system safety and stability
+
+**Application scenario**
+- Building water supply and drainage systems: domestic water supply and fire water supply for high-rise buildings, water tank level control, zoned pressure reduction.
+- Fire protection systems: pressure stabilization, pressure reduction, water hammer prevention at fire pump outlets, system overpressure relief.
+- Water conservancy and municipal water supply: flow, water level control, pressure regulation, safety pressure relief in reservoirs, water plants, and water pipelines.
+- Industrial circulation systems: pressure and flow control for chilled water and cooling water systems in central air conditioning.
+- Irrigation systems: zoned control and pressure management for large agricultural irrigation projects.
+
+## 2) Safety Valve
+**Specifications**
+- Nominal Diameter: DN50, DN100, etc.
+- Connection Type: Flange, Threaded, Welded
+- Valve Body Material: Carbon Steel (WCB), Stainless Steel (CF8/304, CF8M/316), Alloy Steel (WC6, WC9), etc.
+- Applicable Media: Steam, Air/Gas, Liquids (Water, Oil), etc.
+
+**Product description**
+A safety valve is an automatic valve that uses the pressure of the medium itself to discharge a certain amount of fluid without any external force, preventing internal system pressure from exceeding a predetermined safety value. Once pressure returns to normal, it automatically closes to stop further flow.
+
+**Product function**
+Overpressure relief / system protection / life and property safety
+
+- When system pressure abnormally rises (cooling failure, runaway reaction, fire, misoperation, etc.), the safety valve acts as the last defense, releasing medium and forcing pressure within a safe range.
+- Prevents overpressure to protect pressure vessels, pipelines, boilers, heat exchangers, avoiding damage/scrapping or costly repairs.
+- Prevents catastrophic energy release from ruptures/explosions that could cause casualties, property loss, environmental disasters—directly protects operators, public, and facilities.
+
+**Value advantage**
+- Fully automated and fast response
+- High reliability
+- Large discharge capacity
+- Wide range of applications
+
+**Application scenario**
+- Energy and power: boilers, pressure vessels, steam pipes, steam turbines.
+- Petrochemical: reactors, distillation towers, storage tanks, LPG spherical tanks, long-distance pipelines.
+- Pharmaceutical and food: fermentation tanks, autoclaves, food processing equipment.
+- Other industries: air compressors, refrigeration systems, hydraulic systems, etc.

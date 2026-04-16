@@ -111,76 +111,13 @@ export default function ProductDetailPage({
               </div>
             </SectionReveal>
 
-            {/* Key Parameters (Valve / Pump detail pages) */}
-            {(isValve || isPump || isFitting) && (
+
+            {/* Full Specifications Table */}
+            {product.specifications.length > 0 && (
               <SectionReveal delay={0.25}>
                 <div className="space-y-6">
                   <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
-                    Key Parameters
-                    <div className="h-1 flex-1 bg-neutral-100 ml-4 rounded-full" />
-                  </h3>
-
-                  <div className={cn("bg-white border border-neutral-100", pxn.radiusMinor)}>
-                    <div className="grid gap-0 md:grid-cols-2">
-                      <div className="p-6 md:p-8 border-b border-neutral-100 md:border-b-0 md:border-r">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400">
-                          Material
-                        </div>
-                        <div className="mt-3 text-base font-bold text-zinc-900 leading-snug">
-                          {material}
-                        </div>
-                      </div>
-
-                      <div
-                        className={cn(
-                          "p-6 md:p-8 border-b border-neutral-100 md:border-b-0",
-                          isValve ? "" : "md:border-r"
-                        )}
-                      >
-                        <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400">
-                          {isValve ? "Process" : "Specification"}
-                        </div>
-                        <div className="mt-3 text-base font-bold text-zinc-900 leading-snug">
-                          {isValve ? process : specification}
-                        </div>
-                      </div>
-
-                      {isValve && (
-                        <div className="p-6 md:p-8 border-b border-neutral-100 md:border-b-0 md:border-r md:border-t">
-                          <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400">
-                            Specification
-                          </div>
-                          <div className="mt-3 text-base font-bold text-zinc-900 leading-snug">
-                            {specification}
-                          </div>
-                        </div>
-                      )}
-
-                      <div
-                        className={cn(
-                          "p-6 md:p-8",
-                          isValve ? "md:border-t" : "md:col-span-2 md:border-t"
-                        )}
-                      >
-                        <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400">
-                          Application
-                        </div>
-                        <div className="mt-3 text-base font-bold text-zinc-900 leading-snug">
-                          {application}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SectionReveal>
-            )}
-
-            {/* Specifications Section */}
-            {!isValve && !isPump && !isFitting && (
-              <SectionReveal delay={0.3}>
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
-                    Technical Specifications
+                    Detailed Specifications
                     <div className="h-1 flex-1 bg-neutral-100 ml-4 rounded-full" />
                   </h3>
                   <div className={cn(
@@ -191,13 +128,13 @@ export default function ProductDetailPage({
                       <thead className="bg-neutral-50 text-zinc-500 uppercase tracking-wider font-bold text-[11px]">
                         <tr>
                           <th className="px-6 py-4">Parameter</th>
-                          <th className="px-6 py-4">Standard Value</th>
+                          <th className="px-6 py-4">Standard Value / Description</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-neutral-100">
                         {product.specifications.map((spec, idx) => (
                           <tr key={idx} className="bg-white hover:bg-neutral-50/50 transition-colors">
-                            <td className="px-6 py-4 font-semibold text-zinc-800">{spec.key}</td>
+                            <td className="px-6 py-4 font-semibold text-zinc-800 w-1/3">{spec.key}</td>
                             <td className="px-6 py-4 text-zinc-600">{spec.value}</td>
                           </tr>
                         ))}
@@ -208,23 +145,69 @@ export default function ProductDetailPage({
               </SectionReveal>
             )}
 
-            {/* Purpose / Application */}
-            {!isValve && !isPump && !isFitting && (
+            {/* Product Functions */}
+            {product.functions && product.functions.length > 0 && (
+              <SectionReveal delay={0.3}>
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
+                    Key Functions
+                    <div className="h-1 flex-1 bg-neutral-100 ml-4 rounded-full" />
+                  </h3>
+                  <div className="grid gap-4">
+                    {product.functions.map((func, idx) => (
+                      <div key={idx} className="flex gap-4 p-5 bg-neutral-50 rounded-2xl border border-neutral-100">
+                        <div className="h-6 w-6 shrink-0 rounded-full bg-white flex items-center justify-center text-[#4f25e4] shadow-sm mt-1">
+                          <Zap className="h-3.5 w-3.5" />
+                        </div>
+                        <p className="text-zinc-700 leading-relaxed text-sm font-medium">
+                          {func}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </SectionReveal>
+            )}
+
+            {/* Value Advantages */}
+            {product.advantages && product.advantages.length > 0 && (
+              <SectionReveal delay={0.35}>
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
+                    Value Advantages
+                    <div className="h-1 flex-1 bg-neutral-100 ml-4 rounded-full" />
+                  </h3>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {product.advantages.map((adv, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="mt-1 h-5 w-5 shrink-0 text-[#4f25e4]">
+                          <ShieldCheck className="h-5 w-5" />
+                        </div>
+                        <span className="text-sm font-semibold text-zinc-700">{adv}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </SectionReveal>
+            )}
+
+            {/* Application Scenarios */}
+            {product.scenarios && product.scenarios.length > 0 && (
               <SectionReveal delay={0.4}>
                 <div className="space-y-6">
                   <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
-                    Application &amp; Purpose
+                    Application Scenarios
                     <div className="h-1 flex-1 bg-neutral-100 ml-4 rounded-full" />
                   </h3>
-                  <div className="bg-neutral-50 p-8 rounded-3xl border border-neutral-100">
-                    <div className="flex gap-4">
-                      <div className="h-10 w-10 shrink-0 rounded-full bg-white flex items-center justify-center text-[#4f25e4] shadow-sm">
-                        <CheckCircle2 className="h-6 w-6" />
+                  <div className="grid gap-4">
+                    {product.scenarios.map((scenario, idx) => (
+                      <div key={idx} className="flex items-center gap-4 py-3 border-b border-neutral-100 last:border-0">
+                        <div className="h-2 w-2 rounded-full bg-[#4f25e4] shrink-0" />
+                        <span className="text-sm font-medium text-zinc-600 italic">
+                          {scenario}
+                        </span>
                       </div>
-                      <p className="text-zinc-700 leading-relaxed font-medium">
-                        {product.purpose}
-                      </p>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </SectionReveal>

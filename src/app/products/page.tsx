@@ -17,7 +17,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
-  const categories = ["Valves", "Pumps", "Fittings"] as const;
+  const categories = ["Valves" /*, "Pumps", "Fittings"*/] as const;
   const [activeCategory, setActiveCategory] = useState<string>("Valves");
   const [activeSubCategory, setActiveSubCategory] = useState<string>("");
 
@@ -42,7 +42,7 @@ function ProductsContent() {
         const mockCat = parentCat === "Valves" 
           ? jinjieberMock.products.valves.find(v => v.title === subCat)
           : parentCat === "Pumps"
-          ? jinjieberMock.products.pumps.find(p => p.title === subCat)
+          ? jinjieberMock.products?.pumps?.find(p => p?.title === subCat)
           : null;
 
         return {

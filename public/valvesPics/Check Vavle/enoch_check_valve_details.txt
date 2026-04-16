@@ -1,0 +1,89 @@
+Check Valve 产品介绍信息汇总
+
+----------------------------------------
+1) Rubber Flap Check Valve
+- Nominal Pressure: PN6, 10, 16, 25.
+- Nominal Diameter: DN 50 ~ 1200.
+- Valve Body Materials: Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel (CF8/304, CF8M/316), etc.
+- Connection Methods: Flange, Wafer
+
+## Product description
+Rubber flap check valve (rubber flap non-return valve / flexible check valve) uses rubber as a sealing element and relies entirely on the medium flow to open/close. It prevents backflow to protect pumps/compressors from water hammer.
+
+## Product function
+Backflow Prevention; Reduced Water Hammer Effect; Energy Saving.
+- When pump stops or upstream pressure is lower than downstream, valve closes automatically to prevent backflow, avoiding damage.
+- Elastic rubber disc provides buffering when closing, gradually cutting off water flow to reduce water hammer.
+- Forward flow opens disc easily and suspends it above flow channel, with little resistance, reducing pump energy consumption.
+
+## Value advantage
+- Excellent sealing performance
+- Quick closing, minimal water hammer effect
+- Low flow resistance, strong flow capacity
+- Good wear and particle resistance
+
+## Application scenario
+- Water supply and drainage: municipal water supply, building water supply, fire protection systems
+- Sewage treatment: lift stations, inlets/outlets of sewage treatment plants
+- Industrial processes: particulate/corrosive media pipelines (chemical, papermaking, pharmaceutical)
+- Construction: high-rise water supply/drainage, air conditioning cooling water
+- Water conservancy and flood control: drainage pump stations, sluice systems
+
+----------------------------------------
+2) Stainless Steel Check Valve
+- Nominal Pressure: PN10/16/25/40/64.
+- Nominal Diameter: DN15 (~1/2") ~ DN600 (~24") and larger.
+- Body Material: 304, 316/316L, 301, 302, 304L, 321, etc.
+- Connection Methods: Threaded, Flange, Wafer, Welded
+
+## Product description
+Stainless steel check valve (one-way/non-return valve) opens/closes disc automatically based on medium flow to prevent backflow. Made of stainless steel for corrosion resistance, high temperature resistance, and strength.
+
+## Product function
+Preventing Backflow; Maintaining Pipeline Pressure; Preventing Medium Mixing.
+- Prevents equipment damage/system failure due to backflow from pump stoppage/pressure changes
+- Helps maintain pressure in areas of the system and ensures stable operation
+- Prevents mixing of media from different sources when pressure changes occur, ensuring purity/safety
+
+## Value advantage
+- Excellent corrosion resistance
+- High strength and high pressure resistance
+- Wide temperature adaptability (-196°C ~ over 800°C)
+- High sanitation
+
+## Application scenario
+- Water supply and drainage: municipal/building supply, fire protection, sewage treatment
+- Petrochemical: corrosive chemical media pipelines
+- Food/pharmaceutical: beverage, dairy, pharmaceutical production lines requiring sterility/hygiene
+- Power: boiler water supply, steam pipes, cooling systems
+- HVAC: hot/cold water circulation, prevent backflow when pumps stop
+- Various industrial processes: metallurgy, shipbuilding, papermaking
+
+----------------------------------------
+3) Cast Steel Check Valve
+- Nominal Pressure: PN16, 25, 40, 64, 100.
+- Nominal Diameter: DN15 ~ DN800 and larger.
+- Body Material: A216 WCB (commonly carbon steel casting).
+- Connection Methods: Flange, Wafer, Threaded, Welded
+
+## Product description
+Cast steel check valve uses cast steel (WCB/WCC/LCB) for valve body/primary pressure-bearing parts. It is an automatic valve that opens/closes based on medium flow. Primary function is to prevent backflow to prevent equipment damage or accidents.
+
+## Product function
+Prevents Backflow; Ensures System Safety; Automatic Operation.
+- Backflow can cause equipment damage and contamination of clean media sources
+- Preventing backflow improves safety/reliability, avoiding accidents
+- Opening/closing is completely automatic via medium flow force
+
+## Value advantage
+- High strength and high pressure resistance
+- Excellent temperature resistance (-29°C ~ 425°C)
+- Automatic operation, safe and reliable
+- Good durability and impact resistance
+
+## Application scenario
+- Petrochemical: oils and chemical media pipelines
+- Power: boiler feedwater, steam, cooling water systems
+- Water supply/drainage and municipal services: pump outlets to prevent backflow
+- Heating systems: prevent hot water/steam backflow in pipe networks
+- Shipbuilding: ship propulsion systems and piping systems

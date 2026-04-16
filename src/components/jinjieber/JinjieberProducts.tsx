@@ -16,8 +16,10 @@ export const JinjieberProducts: React.FC = () => {
 
   const categories: { id: ProductCategory; label: string }[] = [
     { id: "valves", label: "Valves" },
+    /*
     { id: "pumps", label: "Pumps" },
     { id: "fittings", label: "Pipe Fittings & Accessories" },
+    */
   ];
 
   return (
@@ -67,16 +69,16 @@ export const JinjieberProducts: React.FC = () => {
                       key={idx}
                       href={`/products?category=Valves&subCategory=${encodeURIComponent(item.title)}`}
                       className={cn(
-                        "overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2 hover:border-[#4f25e4]/20 border border-zinc-100 flex flex-col group",
+                        "overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2 flex flex-col group",
                         pxn.radiusGrid,
                         "shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(79,37,228,0.15)]",
                       )}
                     >
-                      <div className="relative aspect-[4/3] overflow-hidden bg-zinc-50 p-8">
+                      <div className="relative aspect-square overflow-hidden bg-white">
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-2xl"
+                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 drop-shadow-2xl"
                         />
                       </div>
                       <div className="p-8 flex flex-col gap-2">
@@ -91,6 +93,7 @@ export const JinjieberProducts: React.FC = () => {
                 </div>
               )}
 
+              {/*
               {activeCategory === "pumps" && (
                 <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
                   {products.pumps.map((item, idx) => (
@@ -100,7 +103,7 @@ export const JinjieberProducts: React.FC = () => {
                       className={cn(
                         "overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2 hover:border-[#4f25e4]/20 border border-zinc-100 flex flex-col group",
                         pxn.radiusGrid,
-                        "shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(79,37,228,0.15)]",
+                        "shadow-[0_10px_40_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(79,37,228,0.15)]",
                       )}
                     >
                       <div className="relative aspect-[4/3] overflow-hidden bg-zinc-50 p-8">
@@ -134,7 +137,8 @@ export const JinjieberProducts: React.FC = () => {
                             "block p-10 bg-white transition-all duration-300 hover:bg-zinc-50 border border-zinc-100 hover:border-[#4f25e4]/20 h-full",
                             pxn.radiusGrid,
                             "shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)]"
-                          )}
+                          )
+                          }
                         >
                           <div className="text-2xl font-bold text-zinc-900 hover:text-[#4f25e4] transition-colors">{bold}</div>
                           {desc && <div className="mt-4 text-base text-zinc-500 leading-relaxed font-medium">{desc}</div>}
@@ -144,6 +148,7 @@ export const JinjieberProducts: React.FC = () => {
                   })}
                 </ul>
               )}
+              */}
             </motion.div>
           </AnimatePresence>
         </div>

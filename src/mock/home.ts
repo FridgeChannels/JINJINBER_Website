@@ -52,42 +52,32 @@ export const homeMockData = {
       title: "Valves",
       items: [
         {
-          name: "Gate Valves",
-          description:
-            'Reliable shut-off valves engineered for full-bore, low-pressure-drop flow control. Available in cast iron, ductile iron, carbon steel, and stainless steel — from **2" to 48"** — for water, oil, gas, and steam applications.',
+          name: "Ball Valve",
+          description: "Precision-engineered floating and trunnion-mounted ball valves for tight shut-off in high-pressure environments.",
         },
         {
-          name: "Butterfly Valves",
-          description:
-            "Lightweight, cost-effective quarter-turn valves for large-diameter pipelines. Wafer, lug, and double-flanged configurations with resilient or metal seats for **HVAC, water treatment, fire protection**, and industrial process control.",
+          name: "Gate Valve",
+          description: "Reliable shut-off valves engineered for full-bore, low-pressure-drop flow control.",
         },
         {
-          name: "Check Valves",
-          description:
-            "Prevent reverse flow and protect pumps, compressors, and piping systems. Swing check, dual-plate, silent check, and tilting disc designs available in a full range of materials and pressure classes.",
+          name: "Butterfly Valve",
+          description: "Lightweight, cost-effective quarter-turn valves for large-diameter pipelines and HVAC systems.",
         },
         {
-          name: "Ball Valves",
-          description:
-            "Precision-engineered floating and trunnion-mounted ball valves for tight shut-off in high-pressure, high-temperature, and corrosive environments. Ideal for **oil & gas, chemical processing**, and power generation.",
+          name: "Check Valve",
+          description: "Automatic non-return valves designed to prevent reverse flow and protect pumping systems.",
         },
         {
-          name: "Globe Valves",
-          description:
-            "Superior throttling performance for flow regulation applications. Available in straight, angle, and Y-pattern configurations with various trim materials for extended service life.",
+          name: "Strainer",
+          description: "Industrial strainers and filters for pipeline protection and media purification.",
         },
         {
-          name: "Plug Valves",
-          description:
-            "Rugged, dependable plug valves for slurry, abrasive, and high-viscosity media. Lubricated and non-lubricated options for **municipal water, wastewater**, and industrial applications.",
-        },
-        {
-          name: "Fire Protection Valves (UL/FM Listed)",
-          description:
-            "Purpose-built for life safety — including **OS&Y gate valves, indicator post valves, butterfly valves, alarm check valves, and deluge valves** — all listed and approved to the strictest fire protection codes.",
+          name: "Other Valve",
+          description: "Specialized control valves, safety valves, and custom flow solutions for unique industrial needs.",
         },
       ],
     },
+    /*
     {
       title: "Pumps",
       items: [
@@ -138,6 +128,7 @@ export const homeMockData = {
         },
       ],
     },
+    */
   ] satisfies ProductCategory[],
 
   industries: [
@@ -157,17 +148,25 @@ export const homeMockData = {
     },
     {
       title: "Irrigation & Agriculture",
+      /* description: 
+        "Efficient water management starts with reliable flow control. Our **butterfly valves, check valves, and centrifugal pumps** help agricultural operations maximize water delivery while minimizing waste — from drip irrigation networks to large-scale canal systems.", */
       description:
-        "Efficient water management starts with reliable flow control. Our **butterfly valves, check valves, and centrifugal pumps** help agricultural operations maximize water delivery while minimizing waste — from drip irrigation networks to large-scale canal systems.",
+        "Efficient water management starts with reliable flow control. Our **butterfly valves and check valves** help agricultural operations maximize water delivery while minimizing waste — from drip irrigation networks to large-scale canal systems.",
+      /* keyProducts:
+        "Key Products: Butterfly Valves · Foot Valves · Centrifugal Irrigation Pumps · Booster Pump Systems", */
       keyProducts:
-        "Key Products: Butterfly Valves · Foot Valves · Centrifugal Irrigation Pumps · Booster Pump Systems",
+        "Key Products: Butterfly Valves · Foot Valves",
     },
     {
       title: "Fire Protection",
+      /* description:
+        "When lives are on the line, there's no room for compromise. Jinjieber's **UL/FM listed fire protection valves and pumps** are installed in commercial buildings, industrial facilities, airports, and high-rise towers worldwide. Every product undergoes rigorous third-party testing and certification.", */
       description:
-        "When lives are on the line, there's no room for compromise. Jinjieber's **UL/FM listed fire protection valves and pumps** are installed in commercial buildings, industrial facilities, airports, and high-rise towers worldwide. Every product undergoes rigorous third-party testing and certification.",
+        "When lives are on the line, there's no room for compromise. Jinjieber's **UL/FM listed fire protection valves** are installed in commercial buildings, industrial facilities, airports, and high-rise towers worldwide. Every product undergoes rigorous third-party testing and certification.",
+      /* keyProducts:
+        "Key Products: UL/FM OS&Y Gate Valves · Alarm Check Valves · Deluge Valves · Fire Pump Packages · Indicator Posts", */
       keyProducts:
-        "Key Products: UL/FM OS&Y Gate Valves · Alarm Check Valves · Deluge Valves · Fire Pump Packages · Indicator Posts",
+        "Key Products: UL/FM OS&Y Gate Valves · Alarm Check Valves · Deluge Valves · Indicator Posts",
     },
     {
       title: "Power Generation",
@@ -184,8 +183,10 @@ export const homeMockData = {
   globalPresence: [
     {
       title: "🇨🇳 China — Manufacturing & Innovation Hub",
+      /* description:
+        "Our state-of-the-art manufacturing campus houses **advanced foundries, CNC machining centers, automated assembly lines**, and a full-service quality lab. With over **500 skilled engineers and production specialists**, this is where world-class valves and pumps are born.", */
       description:
-        "Our state-of-the-art manufacturing campus houses **advanced foundries, CNC machining centers, automated assembly lines**, and a full-service quality lab. With over **500 skilled engineers and production specialists**, this is where world-class valves and pumps are born.",
+        "Our state-of-the-art manufacturing campus houses **advanced foundries, CNC machining centers, automated assembly lines**, and a full-service quality lab. With over **500 skilled engineers and production specialists**, this is where world-class valves are born.",
     },
     {
       title: "🇺🇸 North America — Sales & Distribution Center",
@@ -297,6 +298,8 @@ export const homeMockData = {
       author: "— *Water Utility Director, Texas, USA*",
     },
     {
+      /* quote:
+        '"We\'ve sourced fire protection valves from multiple suppliers. Jinjieber stands out for their UL/FM compliance, competitive pricing, and ability to deliver large orders on tight schedules."', */
       quote:
         '"We\'ve sourced fire protection valves from multiple suppliers. Jinjieber stands out for their UL/FM compliance, competitive pricing, and ability to deliver large orders on tight schedules."',
       author: "— *Fire Protection Contractor, Dubai, UAE*",

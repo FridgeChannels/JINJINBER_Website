@@ -13,187 +13,674 @@ export interface Product {
   image: string;
   specifications: ProductSpecification[];
   purpose: string;
+  functions?: string[];
+  advantages?: string[];
+  scenarios?: string[]; // Application scenarios
 }
 
 export const products: Product[] = [
-  // --- VALVES (11 products, 6 categories) ---
+  // --- VALVES (20 products, 6 categories) ---
+  // Ball Valve (4 items)
   {
-    id: "v1",
-    slug: "resilient-seated-gate-valve",
-    name: "Resilient Seated Gate Valve",
-    category: "Gate Valves",
+    id: "v-ball-1",
+    slug: "cast-steel-ball-valve",
+    name: "Cast Steel Ball Valve",
+    category: "Ball Valve",
     parentCategory: "Valves",
-    description: "High-performance gate valve designed for bubble-tight shut-off in water supply and wastewater systems. Features a vulcanized wedge for superior sealing.",
-    image: "/gate_valve_commercial_1776252899266.png",
+    description: "A cast steel ball valve features a body made of cast carbon steel (WCB, WCC, LCB, etc.). Its core opening and closing component is a ball with a through hole. The valve stem rotates 90 degrees to achieve full opening, full closing, or throttling of the medium.",
+    image: "/valvesPics/BallVavle/1CastSteelBallValve.png",
     specifications: [
-      { key: "Standard", value: "AWWA C509 / C515" },
-      { key: "Material", value: "Ductile Iron (GJS500-7)" },
-      { key: "Size Range", value: "2\" - 24\"" },
-      { key: "Pressure", value: "PN10 / PN16 / 250 PSI" }
+      { key: "Nominal Pressure", value: "PN 16, 25, 40, 63, 100, 160" },
+      { key: "Nominal Diameter", value: "DN15 to DN1200, and even larger" },
+      { key: "Body Material", value: "Standard cast steel (WCB), low-temperature cast steel (LCB), etc." },
+      { key: "Connection Types", value: "Flange, threaded, and butt-weld" }
     ],
-    purpose: "Commonly used in municipal water distribution, industrial cooling systems, and sewage treatment plants."
+    purpose: "Isolation and regulation for industrial pipelines, petrochemical facilities, and municipal water.",
+    functions: [
+      "Cutting Off and Connecting the Medium: By rotating the handle, turbine, or actuator, the ball inside the ball valve can be rotated 90 degrees, achieving full opening or full closing of the pipeline.",
+      "Flow Distribution and Redirection: For three-way ball valves (T-type or L-type), it can change the flow direction of the medium, realizing the function of distribution, merging, or switching flow paths."
+    ],
+    advantages: [
+      "High strength and good pressure resistance",
+      "Wide temperature range for diverse industrial environments",
+      "Excellent sealing performance, achieving zero leakage",
+      "Minimal flow resistance and strong flow capacity"
+    ],
+    scenarios: [
+      "Water supply: Municipal water supply and sewage treatment",
+      "Petrochemical: Pipelines for corrosive chemical media",
+      "Food & Pharma: Sterile beverage and pharmaceutical production",
+      "Power Industry: Boiler water supply and cooling systems",
+      "HVAC: Circulation systems for hot and cold water"
+    ]
   },
   {
-    id: "v2",
-    slug: "os-y-rising-stem-gate-valve",
-    name: "OS&Y Rising Stem Gate Valve",
-    category: "Gate Valves",
+    id: "v-ball-2",
+    slug: "v-type-ball-valve",
+    name: "V-Type Ball Valve",
+    category: "Ball Valve",
     parentCategory: "Valves",
-    description: "Outside Screw and Yoke gate valve with a rising stem for easy visual indication of valve position. Ideal for critical industrial and fire protection paths.",
-    image: "/placeholders/Product/v2.jpg",
+    description: "The V-type ball valve is a regulating ball valve and a quarter-turn valve. Its biggest difference from a standard O-type ball valve is the unique V-shaped cutout on the ball core, making it ideal for automated process control requiring precise adjustment.",
+    image: "/valvesPics/BallVavle/1V-TypeBallValve.png",
     specifications: [
-      { key: "Standard", value: "ASME B16.34 / API 600" },
-      { key: "Material", value: "Cast Carbon Steel / WCB" },
-      { key: "Size Range", value: "2\" - 36\"" },
-      { key: "Ends", value: "Flanged / Butt-weld" }
+      { key: "Nominal Pressure", value: "PN10, 16, 25, 40, 64, 100" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN500, and even larger" },
+      { key: "Body Material", value: "Carbon steel (WCB), stainless steel (CF8/304, CF8M/316), duplex stainless steel, etc." },
+      { key: "Connection Types", value: "Flange, threaded, butt-weld, and wafer" }
     ],
-    purpose: "Primary choice for high-pressure steam, oil and gas pipelines, and power plant circuit isolation."
+    purpose: "Precise regulation and control of fiber slurries, pulp, and media containing solid particles.",
+    functions: [
+      "Regulation and Control: The V-type ball valve achieves precise flow control throughout the entire regulation process, exhibiting high sensitivity and making it ideal for automated process control requiring precise adjustment.",
+      "Shearing Force and Self-Cleaning Function: During valve closing and opening, the V-shaped notch cuts through fibers, pulp, and other entangled materials in the pipeline medium. For slurries containing solid particles, the V-shaped notch effectively prevents particles from becoming stuck between the ball and the valve seat, thus preventing valve jamming or seal damage."
+    ],
+    advantages: [
+      "Excellent regulating performance (core advantage)",
+      "Excellent anti-clogging and self-cleaning capabilities",
+      "High wear resistance and long service life",
+      "Large flow capacity and low flow resistance"
+    ],
+    scenarios: [
+      "Papermaking: Pulp, black liquor, and white water regulation",
+      "Wastewater: Sludge and media containing solid particles",
+      "Chemical: Catalyst slurries, polymers, and crystals",
+      "Power: Pulverized coal and desulfurization slurry",
+      "Mining: Slurry, tailings, and cement raw materials"
+    ]
   },
   {
-    id: "v3",
-    slug: "wafer-type-butterfly-valve",
-    name: "Wafer Type Butterfly Valve",
-    category: "Butterfly Valves",
+    id: "v-ball-3",
+    slug: "welded-ball-valve",
+    name: "Welded Ball Valve",
+    category: "Ball Valve",
     parentCategory: "Valves",
-    description: "Compact and lightweight butterfly valve designed for easy installation between pipe flanges. Features a concentric disc design for effective flow control.",
-    image: "/butterfly_valve_wafer_1776253014793.png",
+    description: "A welded ball valve is permanently connected to a piping system by welding. Because of its welded connection, it is considered a high-performance, permanent valve, particularly suitable for demanding applications requiring zero leakage and high safety.",
+    image: "/valvesPics/BallVavle/1WeldedBallVavle.png",
     specifications: [
-      { key: "Seat", value: "EPDM / NBR / Viton" },
-      { key: "Body", value: "Ductile Iron / CI" },
-      { key: "Operation", value: "Lever / Gear / Actuator" },
-      { key: "Connection", value: "Wafer" }
+      { key: "Nominal Pressure", value: "PN16, 25, 40, 63, 100, 150, 250, 420" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN1200" },
+      { key: "Valve Body Materials", value: "Carbon Steel (WCB, WCC), Stainless Steel, Alloy Steel, Duplex Steel" },
+      { key: "Operating Temperature", value: "-196°C ~ +550°C" }
     ],
-    purpose: "Widely used in HVAC systems, irrigation, and food processing for low-pressure fluid regulation."
+    purpose: "Used in long-distance pipelines and high-safety environments requiring zero leakage.",
+    functions: [
+      "Cutting Off and Connecting the Medium: Open State: The ball rotates 90 degrees, aligning its passage with the pipe diameter, allowing fluid to flow through with almost no resistance and minimal pressure loss. Closed State: The ball rotates another 90 degrees, making its passage perpendicular to the pipe. The tight seal between the ball and the valve seat completely blocks fluid flow.",
+      "Flow Regulation: Theoretically, flow can be regulated by partially opening the ball valve, but partial opening affects its sealing performance. Therefore, welded ball valves are primarily used as 'on/off' valves, not regulating valves."
+    ],
+    advantages: [
+      "Zero leakage/excellent sealing performance",
+      "Compact structure and lightweight",
+      "High strength and excellent safety for hazardous media",
+      "Long service life and extremely low maintenance costs"
+    ],
+    scenarios: [
+      "Oil & Gas: Long-distance pipelines and offshore platforms",
+      "Chemical: Pipelines for corrosive and toxic media",
+      "Power: Boiler feedwater and steam pipelines",
+      "Urban Heating: Trunk lines for district heating and cooling",
+      "Metallurgy: High reliability industrial processes"
+    ]
   },
   {
-    id: "v4",
-    slug: "double-flanged-butterfly-valve",
-    name: "Double Flanged Butterfly Valve",
-    category: "Butterfly Valves",
+    id: "v-ball-4",
+    slug: "stainless-ball-valve-jjb",
+    name: "Stainless Ball Valve",
+    category: "Ball Valve",
     parentCategory: "Valves",
-    description: "Rugged double-flanged butterfly valve designed for heavy-duty service in large diameter pipelines. Provides bidirectional bubble-tight shut-off.",
-    image: "/placeholders/Product/v4.jpg",
+    description: "A stainless steel ball valve is a rotary shut-off valve made of premium stainless steel. Due to its excellent corrosion resistance and structural strength, it is indispensable in chemical and food production where sterility and hygiene are required.",
+    image: "/valvesPics/BallVavle/1stainlessBallVavle-JJB.png",
     specifications: [
-      { key: "Standard", value: "EN 593 / AWWA C504" },
-      { key: "Material", value: "Ductile Iron / Cast Steel" },
-      { key: "Size Range", value: "12\" - 80\"" },
-      { key: "Seat Type", value: "Resilient / Metal" }
+      { key: "Nominal Pressure", value: "PN10, 16, 25, 40, 64, 100" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN300" },
+      { key: "Valve Body Material", value: "304, 316/L, CF8, CF8M" },
+      { key: "Connection Methods", value: "Threaded, flanged, wafer, welded" }
     ],
-    purpose: "Primary use in large water mains, desalination plants, and industrial cooling water loops."
-  },
-  {
-    id: "v5",
-    slug: "swing-check-valve",
-    name: "Swing Check Valve",
-    category: "Check Valves",
-    parentCategory: "Valves",
-    description: "Automatic non-return valve that allows flow in only one direction. Designed with a clear-way, full-port flow for minimum pressure drop.",
-    image: "/placeholders/Product/v5.jpg",
-    specifications: [
-      { key: "Standard", value: "BS 5153 /MSS SP-71" },
-      { key: "Material", value: "Ductile Iron / CI" },
-      { key: "Pressure", value: "Class 125 / 150" },
-      { key: "Sizes", value: "2\" - 24\"" }
+    purpose: "Indispensable in corrosive chemical environments and high-hygiene food processing lines.",
+    functions: [
+      "Connecting and Cutting Off the Medium: By rotating the handle or actuator 90 degrees, the channel inside the ball valve is aligned with or perpendicular to the pipeline direction, thus achieving a fully open (medium flow unimpeded) or fully closed (medium completely cut off) state.",
+      "Changing the Medium Flow Direction: Mainly used in three-way, four-way, and other multi-way ball valves. By changing the direction of the ball valve's channel, the medium can be guided to different outlet pipelines."
     ],
-    purpose: "Installed after pumps to prevent water hammer and reverse flow in pumping stations."
-  },
-  {
-    id: "v6",
-    slug: "dual-plate-wafer-check-valve",
-    name: "Dual Plate Wafer Check Valve",
-    category: "Check Valves",
-    parentCategory: "Valves",
-    description: "Space-saving check valve with two spring-loaded plates. Provides fast response and silent closure compared to traditional swing checks.",
-    image: "/placeholders/Product/v6.jpg",
-    specifications: [
-      { key: "Design", value: "API 594" },
-      { key: "Weight", value: "80% lighter than swing" },
-      { key: "Materials", value: "SS304 / SS316 / WCB" },
-      { key: "Sealing", value: "Buna-N / Viton / Metal" }
+    advantages: [
+      "Excellent corrosion resistance (304/316L)",
+      "Simple structure and easy maintenance",
+      "Low flow resistance and high flow capacity",
+      "Reliable sealing performance, achieving zero leakage"
     ],
-    purpose: "Ideal for tight spaces in chemical processing, oil refineries, and marine applications."
-  },
-  {
-    id: "v7",
-    slug: "floating-ball-valve",
-    name: "Floating Ball Valve",
-    category: "Ball Valves",
-    parentCategory: "Valves",
-    description: "Reliable 2-piece or 3-piece ball valve for high-cycle industrial service. Provides quick 1/4 turn operation and bubble-tight shut-off.",
-    image: "/placeholders/Product/v7.jpg",
-    specifications: [
-      { key: "Standard", value: "ASME B16.34 / API 608" },
-      { key: "Body", value: "WCB / CF8 / CF8M" },
-      { key: "Pressure", value: "Class 150 - 600" },
-      { key: "Operation", value: "Manual / Pneumatic" }
-    ],
-    purpose: "Common in oil & gas distribution, petrochemical plants, and fine chemical processing."
-  },
-  {
-    id: "v8",
-    slug: "trunnion-mounted-ball-valve",
-    name: "Trunnion Mounted Ball Valve",
-    category: "Ball Valves",
-    parentCategory: "Valves",
-    description: "Heavy-duty ball valve with fixed trunnion support for the ball. Designed for high pressure and large sizes where floating balls are not suitable.",
-    image: "/placeholders/Product/v8.jpg",
-    specifications: [
-      { key: "Standard", value: "API 6D" },
-      { key: "Sizes", value: "2\" - 48\"" },
-      { key: "Feature", value: "Double Block and Bleed" },
-      { key: "Sealing", value: "Soft / Metal Seated" }
-    ],
-    purpose: "Critical isolation for pipeline transmission, gas storage, and heavy industrial process manifolds."
-  },
-  {
-    id: "v9",
-    slug: "cast-steel-globe-valve",
-    name: "Cast Steel Globe Valve",
-    category: "Globe Valves",
-    parentCategory: "Valves",
-    description: "Precision throttling valve designed for regulating fluid flow. Features a spherical body and a movable plug for accurate control.",
-    image: "/placeholders/Product/v9.jpg",
-    specifications: [
-      { key: "Standard", value: "BS 1873 / ASME B16.34" },
-      { key: "Material", value: "ASTM A216 WCB" },
-      { key: "Class", value: "150 / 300 / 600" },
-      { key: "Ends", value: "Flanged RF / RTJ" }
-    ],
-    purpose: "Essential for steam control, boiler feed water, and general throttling in liquid systems."
-  },
-  {
-    id: "v10",
-    slug: "stainless-steel-bellow-globe-valve",
-    name: "SS Bellow Seal Globe Valve",
-    category: "Globe Valves",
-    parentCategory: "Valves",
-    description: "Zero-leakage globe valve with a bellows seal to prevent stem emissions. Specifically designed for hazardous and toxic media.",
-    image: "/placeholders/Product/v10.jpg",
-    specifications: [
-      { key: "Bellow", value: "Inconel / Multi-ply SS" },
-      { key: "Leakage", value: "Zero (Bellows)" },
-      { key: "Pressure", value: "PN16 - PN40 / CL150" },
-      { key: "Safety", value: "Stem-secondary seal" }
-    ],
-    purpose: "Used in pharmaceutical, chemical, and nuclear industries where fugitive emissions must be eliminated."
-  },
-  {
-    id: "v11",
-    slug: "eccentric-plug-valve",
-    name: "Eccentric Plug Valve",
-    category: "Plug Valves",
-    parentCategory: "Valves",
-    description: "Quarter-turn valve with an eccentric action plug that lifts from the seat during opening. Designed for slurry and solids-laden media.",
-    image: "/placeholders/Product/v11.jpg",
-    specifications: [
-      { key: "Body", value: "Ductile Iron (Lined)" },
-      { key: "Plug", value: "EPDM / NBR Encapsulated" },
-      { key: "Port", value: "Rectangular (80% / 100%)" },
-      { key: "Pressure", value: "175 PSI / 250 PSI" }
-    ],
-    purpose: "Specifically designed for sewage, slurry, and mining tailings handling."
+    scenarios: [
+      "Food & Beverage: Dairy and beverage production lines",
+      "Pharmaceutical: Sterile processing and pharmaceutical pipelines",
+      "Chemical: Transporting various corrosive chemical media",
+      "Water Supply: Building water and fire protection systems",
+      "Marine: Corrosion-resistant shipboard piping systems"
+    ]
   },
 
+  // Gate Valve (3 items)
+  {
+    id: "v-gate-1",
+    slug: "knife-gate-valve",
+    name: "Knife Gate Valve",
+    category: "Gate Valve",
+    parentCategory: "Valves",
+    description: "The knife gate valve, also known as a knife-shaped gate valve, knife gate valve, or slurry valve, is a uniquely designed gate valve. Its core component is a blade-like, beveled gate disc. This design enables it to easily cut through and handle viscous or scaling media containing solid particles, fibers, slurries, and other materials.",
+    image: "/valvesPics/GateVavle/1KnifeGateValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16" },
+      { key: "Nominal Diameter", value: "DN25 ~ DN1500 (1\" ~ 60\"), and even larger" },
+      { key: "Body Material", value: "Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel (304, 316, 316L), duplex steel, etc." },
+      { key: "Connection Methods", value: "Wafer, flange, threaded, bevel gear/electric actuator" }
+    ],
+    purpose: "Widely used in demanding applications where conventional valves are prone to blocking and leakage.",
+    functions: [
+      "Connecting and Cutting Off Media",
+      "\"Knife\" Shape Design: The gate's bottom features a sharp cutting edge that easily cuts and severs media such as fibers, pulp, particles, and sediments, effectively preventing media blockage in the flow channel.",
+      "Grooveless Structure: Unlike ordinary gate valves, the internal passage of a knife gate valve is typically smooth, without grooves. This prevents media from accumulating in these areas, avoiding jamming and damage to the sealing surface."
+    ],
+    advantages: [
+      "Excellent shutoff and flow capabilities",
+      "Minimal flow resistance, energy-saving and efficient",
+      "Compact structure and light weight",
+      "Self-cleaning function"
+    ],
+    scenarios: [
+      "Paper Industry: Pulp, wastewater, chemicals",
+      "Wastewater Treatment: Raw water, sludge, and wastewater containing solid particles",
+      "Mining and Metallurgy: Slurry, tailings, pulverized coal, and ash",
+      "Food and Pharmaceutical: Chocolate, syrup, fruit pulp, and particulate matter (sanitary design required)",
+      "Chemical Industry: Granular, powdered, and corrosive slurries",
+      "Power Plants: Ash handling systems and fly ash treatment",
+      "Construction Industry: Cement and mortar"
+    ]
+  },
+  {
+    id: "v-gate-2",
+    slug: "stainless-steel-gate-valve",
+    name: "Stainless Steel Gate Valve",
+    category: "Gate Valve",
+    parentCategory: "Valves",
+    description: "A stainless steel gate valve is primarily made of stainless steel. It is a shut-off valve whose core component is a gate (like a plate). Driven by the valve stem, it moves up and down perpendicular to the channel axis, thereby connecting or disconnecting the pipeline. Its primary function is to shut off or connect the medium in the pipeline.",
+    image: "/valvesPics/GateVavle/1StainlessSteelGateValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16, 25, 40, 64, 100" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN400, and even larger" },
+      { key: "Valve Body Material", value: "304/304L, 316/316L, etc." },
+      { key: "Connection Methods", value: "Threaded, flanged, wafer, welded" }
+    ],
+    purpose: "Generally not used for flow regulation; primarily an 'on/off' type valve for connecting or disconnecting media.",
+    functions: [
+      "Connecting and disconnecting media: This valve provides full-open or full-closed control of the media (liquid, gas) in the pipeline. It is not a valve for precise flow regulation, but rather an \"on/off\" type valve."
+    ],
+    advantages: [
+      "Minimal flow resistance, energy-efficient and efficient",
+      "Relatively labor-saving opening and closing",
+      "Reliable sealing performance",
+      "Unrestricted flow direction"
+    ],
+    scenarios: [
+      "Petrochemical Industry: Transporting various corrosive chemicals and petroleum products",
+      "Water Supply and Wastewater Treatment: Municipal water supply, purified water systems, and reclaimed water reuse",
+      "Food and Pharmaceutical Industry: Applications with high hygiene requirements typically utilize 304 or 316L stainless steel",
+      "Shipbuilding and Offshore Engineering: Resistant to seawater corrosion",
+      "Power Industry: Thermal and cooling water systems in power plants",
+      "Heating, Ventilation, and Air Conditioning (HVAC): Hot and cold water systems"
+    ]
+  },
+  {
+    id: "v-gate-3",
+    slug: "gate-valve-45x",
+    name: "Gate Valve 45X",
+    category: "Gate Valve",
+    parentCategory: "Valves",
+    description: "The 45X hydraulically operated check valve utilizes the inherent pressure of the medium in the pipeline and hydraulic principles to achieve opening, closing, and check function. Its primary design objective is to eliminate or significantly reduce the water hammer effect produced by conventional check valves when closing. Therefore, it is also known as a \"silent check valve\".",
+    image: "/valvesPics/GateVavle/GateValve45X.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN10, PN16, PN25" },
+      { key: "Nominal Diameter", value: "DN50 ~ DN1200" },
+      { key: "Body Material", value: "Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, etc." },
+      { key: "Seal Material", value: "Nitrile (NBR), EPDM, etc. (based on temperature and environment)" }
+    ],
+    purpose: "Silent isolation and check function for critical pumping stations.",
+    functions: [
+      "Connecting or Cutting Off the Medium",
+      "Bidirectional Flow and Sealing: By rotating the handwheel or wrench, the valve plate moves vertically up and down within the valve body, thus fully opening or closing the pipeline. In the fully open state, the flow path is unobstructed with minimal resistance; in the fully closed state, it reliably cuts off the flow of the medium.",
+      "Installation Flexibility: The 45X gate valve has a symmetrical flow path, allowing the medium to flow in from either side of the valve and out from the other, without any installation direction requirement. Its unique elastic sealing structure ensures excellent sealing performance in both directions."
+    ],
+    advantages: [
+      "Core Advantage: Effectively eliminates water hammer and operates quietly",
+      "Excellent sealing performance and reliable non-return function",
+      "Low flow resistance coefficient and energy saving",
+      "High degree of automation, no external power required"
+    ],
+    scenarios: [
+      "Water supply and drainage systems: Pump outlets for high-rise buildings and municipal water supplies",
+      "Fire protection systems: Fire pump outlets to prevent water hammer damage during pump shutdown",
+      "Industrial circulating water systems: Cooling circulation systems and central air conditioning systems",
+      "Sewage treatment plants: Pump outlets",
+      "Water conservancy projects: Water intake and water transfer pumping stations"
+    ]
+  },
+
+  // Butterfly Valve (5 items)
+  {
+    id: "v-bf-1",
+    slug: "d371x-butterfly-valve",
+    name: "D371X Butterfly Valve",
+    category: "Butterfly Valve",
+    parentCategory: "Valves",
+    description: "D371 butterfly valve is a worm gear drive, wafer-type, centerline butterfly valve. It provides reliable shut-off and efficient flow regulation for a variety of industrial media.",
+    image: "/valvesPics/ButterflyVavle/D371XButterflyValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16" },
+      { key: "Nominal Diameter", value: "DN50 ~ DN1200 and larger" },
+      { key: "Applicable Temperature", value: "Typically -20°C to +120°C (rubber seals)" },
+      { key: "Leakage Level", value: "Zero leakage / ANSI Class VI (soft-sealed)" }
+    ],
+    purpose: "Cutting Off and Connecting the Medium; Flow Regulation.",
+    functions: [
+      "Cutting Off and Connecting the Medium; Flow Regulation.",
+      "Operation: Rotating worm gear turns stem and plate 90° to fully open/close the pipeline; quick operation suits switch valve. Worm gear angle between 0° and 90° changes opening to regulate flow/pressure."
+    ],
+    advantages: [
+      "Compact structure, lightweight, space-saving",
+      "Quick opening and closing, easy operation",
+      "Low fluid resistance, energy saving",
+      "Excellent sealing performance"
+    ],
+    scenarios: [
+      "Water supply/drainage and wastewater treatment: urban networks, pumping stations, sewage treatment",
+      "HVAC: hot/cold water, cooling water circulation",
+      "Energy and power: power plant cooling and circulating water systems",
+      "Petrochemical: low corrosion process piping",
+      "Metallurgy, papermaking, pharmaceuticals and other industrial sectors"
+    ]
+  },
+  {
+    id: "v-bf-2",
+    slug: "d71fx-butterfly-valve",
+    name: "D71FX Butterfly Valve",
+    category: "Butterfly Valve",
+    parentCategory: "Valves",
+    description: "D71FX is a manually operated wafer-type butterfly valve with internal contact areas lined with fluoroplastic, offering superior corrosion resistance for aggressive chemicals.",
+    image: "/valvesPics/ButterflyVavle/D71FXButterflyValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN 6, 10, 16" },
+      { key: "Nominal Diameter", value: "DN50 ~ DN300, and even larger" },
+      { key: "Applicable Temperature", value: "Generally -20°C to +150°C (PTFE up to higher)" },
+      { key: "Applicable Media", value: "Acids, alkalis, salts, organic solvents and other highly corrosive media" }
+    ],
+    purpose: "Connecting or Cutting Off the Medium; Flow Adjustment in highly corrosive environments.",
+    functions: [
+      "Connecting or Cutting Off the Medium; Flow Adjustment.",
+      "Corrosion Control: Rotating handle 90° opens/closes pipeline; fully open: plate parallel with low flow resistance. Fully closed: PTFE soft sealing ring fits tightly against seat to seal and prevent leakage. Handle position between 0° and 90° changes opening to adjust flow/pressure."
+    ],
+    advantages: [
+      "Excellent corrosion resistance",
+      "Excellent sealing performance",
+      "Low fluid resistance, energy saving",
+      "Easy and flexible operation"
+    ],
+    scenarios: [
+      "Chemical Industry: process piping for acid/alkali/salt production lines",
+      "Pharmaceutical: transport of corrosive materials in API production",
+      "Pesticide Industry: corrosive chemicals",
+      "Non-ferrous metallurgy: electrolyte and acid systems in hydrometallurgy",
+      "Environmental Protection: wastewater treatment, acid mist purification systems",
+      "Petrochemical: auxiliary pipelines for some corrosive media"
+    ]
+  },
+  {
+    id: "v-bf-3",
+    slug: "lug-butterfly-valve",
+    name: "Lug Butterfly Valve",
+    category: "Butterfly Valve",
+    parentCategory: "Valves",
+    description: "A lug butterfly valve is a wafer-type butterfly valve with bolt-hole lugs on both ends of the valve body. Bolts pass directly through these lugs to secure the valve between two pipe flanges.",
+    image: "/valvesPics/ButterflyVavle/LugButterflyValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16, 25" },
+      { key: "Nominal Diameter", value: "DN50 ~ DN1200 and larger" },
+      { key: "Body Materials", value: "Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, Copper Alloy" },
+      { key: "Connection Type", value: "Double-lug wafer-type" }
+    ],
+    purpose: "Shutdown and Sealing; Flow Regulation; Bidirectional Flow Blocking.",
+    functions: [
+      "Shutdown and Sealing; Flow Regulation; Bidirectional Flow Blocking.",
+      "Operation: Fully open/close by rotating the butterfly plate 90°. Closed state: plate perpendicular, blocking flow; valve seat and plate edge seal tightly to ensure minimal leakage. Opening angle can be controlled anywhere between 0° and 90° to regulate flow. Standard design allows pressure from either direction."
+    ],
+    advantages: [
+      "Easy installation, especially suitable for terminal equipment",
+      "Compact structure and light weight",
+      "Highly cost-effective",
+      "Low flow resistance and fast opening/closing"
+    ],
+    scenarios: [
+      "Water supply and drainage systems: municipal water supply, sewage treatment plants, fire protection systems",
+      "HVAC: hot/cold water circulation systems",
+      "Industrial processes: on/off control of non-corrosive media (chemical, food, pharmaceutical, paper industries)",
+      "Shipbuilding: seawater and ballast water systems",
+      "Energy industry: power plant cooling water systems"
+    ]
+  },
+  {
+    id: "v-bf-4",
+    slug: "pot-groove-clamp-type-butterfly-valve",
+    name: "Pot-Groove Clamp-Type Butterfly Valve",
+    category: "Butterfly Valve",
+    parentCategory: "Valves",
+    description: "A pot-groove clamp-type butterfly valve combines grooved (clamp) connection features with a wafer-type butterfly valve body. It lacks flanges and is clamped between two pipes using clamps, offering rapid installation.",
+    image: "/valvesPics/ButterflyVavle/Pot-GrooveClamp-TypeButterflyValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN10, 16, 25" },
+      { key: "Nominal Diameter", value: "DN50 ~ DN600 (2\" ~ 24\")" },
+      { key: "Body Material", value: "Ductile Iron (common), Cast Steel, Stainless Steel (304, 316), Copper, etc." },
+      { key: "Seal Material", value: "Nitrile (NBR), EPDM, etc." }
+    ],
+    purpose: "Connecting and Cutting Off Media; Flow Regulation in grooved piping systems.",
+    functions: [
+      "Connecting and Cutting Off Media; Flow Regulation.",
+      "Operation: Rotating handle/turbine/actuator rotates plate within 90° to fully open/close pipeline controlling flow (water, air, oil). Fixing plate at intermediate angle changes opening area for coarse flow adjustment."
+    ],
+    advantages: [
+      "Extremely easy and fast installation",
+      "Compact structure, space-saving",
+      "Easy maintenance and replacement",
+      "Suitable for certain pipes/piping systems"
+    ],
+    scenarios: [
+      "Fire sprinkler systems",
+      "Water supply and drainage: municipal, building water, sewage treatment",
+      "HVAC: hot/cold water circulation systems",
+      "Industrial piping: food, beverage, pharmaceutical (frequent cleaning/maintenance), plus mining and power plant pipelines"
+    ]
+  },
+  {
+    id: "v-bf-5",
+    slug: "wafer-type-butterfly-valve",
+    name: "Wafer-Type Butterfly Valve",
+    category: "Butterfly Valve",
+    parentCategory: "Valves",
+    description: "The wafer-type butterfly valve has no flanges on its body. Instead, it is clamped directly between two pipe flanges using a few bolts threaded through holes in the valve body. Its key features are short length, light weight, and low cost.",
+    image: "/valvesPics/ButterflyVavle/Wafer-TypeButterflyValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16, 25" },
+      { key: "Nominal Diameter", value: "DN 50 to DN 2000, and even larger" },
+      { key: "Body Materials", value: "Gray Cast Iron (HT250), Ductile Iron (QT400), Cast Steel (WCB), Stainless Steel, Duplex Steel, etc." },
+      { key: "Connection Type", value: "Wafer-Type" }
+    ],
+    purpose: "Connecting and Cutting Off; Flow Regulation.",
+    functions: [
+      "Connecting and Cutting Off; Flow Regulation.",
+      "Operation: Fully open/close by rotating the butterfly plate 90°. Fully open: plate parallel to fluid direction, flow path approximately straight. Fully closed: plate perpendicular, sealing ring presses against valve seat to seal and cut off medium. The opening can stop anywhere between 0° and 90° to control flow rate/pressure."
+    ],
+    advantages: [
+      "Compact structure and light weight",
+      "Low cost and good economic efficiency",
+      "Quick opening and closing, easy operation",
+      "Low fluid resistance"
+    ],
+    scenarios: [
+      "Water supply and drainage systems: municipal water supply, sewage treatment, fire protection systems",
+      "Heating, ventilation, and air conditioning (HVAC): chilled water, hot water, cooling water systems",
+      "Chemical industry: various non-corrosive chemical liquids",
+      "Power: circulating water and cooling water systems",
+      "Food and pharmaceutical: sanitary designs used for material handling",
+      "Shipbuilding: seawater, ballast water, bilge water systems",
+      "Compressed Air and Gas: low-pressure air and gas pipelines"
+    ]
+  },
+
+  // Check Valve (3 items)
+  {
+    id: "v-check-1",
+    slug: "cast-steel-check-valve",
+    name: "Cast Steel Check Valve",
+    category: "Check Valve",
+    parentCategory: "Valves",
+    description: "Cast steel check valve uses cast steel (WCB/WCC/LCB) for valve body and primary pressure-bearing parts. It is an automatic valve that opens/closes based on medium flow. Primary function is to prevent backflow to prevent equipment damage or accidents.",
+    image: "/valvesPics/Check Vavle/CastSteelCheckValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN16, 25, 40, 64, 100" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN800 and larger" },
+      { key: "Body Material", value: "A216 WCB (commonly carbon steel casting)" },
+      { key: "Connection Methods", value: "Flange, Wafer, Threaded, Welded" }
+    ],
+    purpose: "Preventing reverse flow in boiler feed and industrial process lines.",
+    functions: [
+      "Prevents Backflow; Ensures System Safety; Automatic Operation.",
+      "Safety: Backflow can cause equipment damage and contamination of clean media sources. Preventing backflow improves safety/reliability, avoiding accidents.",
+      "Operation: Opening/closing is completely automatic via medium flow force."
+    ],
+    advantages: [
+      "High strength and high pressure resistance",
+      "Excellent temperature resistance (-29°C ~ 425°C)",
+      "Automatic operation, safe and reliable",
+      "Good durability and impact resistance"
+    ],
+    scenarios: [
+      "Petrochemical: oils and chemical media pipelines",
+      "Power: boiler feedwater, steam, cooling water systems",
+      "Water supply/drainage and municipal services: pump outlets to prevent backflow",
+      "Heating systems: prevent hot water/steam backflow in pipe networks",
+      "Shipbuilding: ship propulsion systems and piping systems"
+    ]
+  },
+  {
+    id: "v-check-2",
+    slug: "rubber-flap-check-valve",
+    name: "Rubber Flap Check Valve",
+    category: "Check Valve",
+    parentCategory: "Valves",
+    description: "Rubber flap check valve (rubber flap non-return valve / flexible check valve) uses rubber as a sealing element and relies entirely on the medium flow to open/close. It prevents backflow to protect pumps/compressors from water hammer.",
+    image: "/valvesPics/Check Vavle/RubberFlapCheckValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN6, 10, 16, 25" },
+      { key: "Nominal Diameter", value: "DN 50 ~ 1200" },
+      { key: "Valve Body Materials", value: "Gray Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, etc." },
+      { key: "Connection Methods", value: "Flange, Wafer" }
+    ],
+    purpose: "Ideal for water pumping stations to eliminate water hammer.",
+    functions: [
+      "Backflow Prevention; Reduced Water Hammer Effect; Energy Saving.",
+      "Protection: When pump stops or upstream pressure is lower than downstream, valve closes automatically to prevent backflow, avoiding damage.",
+      "Buffering: Elastic rubber disc provides buffering when closing, gradually cutting off water flow to reduce water hammer.",
+      "Energy Efficiency: Forward flow opens disc easily and suspends it above flow channel, with little resistance, reducing pump energy consumption."
+    ],
+    advantages: [
+      "Excellent sealing performance",
+      "Quick closing, minimal water hammer effect",
+      "Low flow resistance, strong flow capacity",
+      "Good wear and particle resistance"
+    ],
+    scenarios: [
+      "Water supply and drainage: municipal water supply, building water supply, fire protection systems",
+      "Sewage treatment: lift stations, inlets/outlets of sewage treatment plants",
+      "Industrial processes: particulate/corrosive media pipelines (chemical, papermaking, pharmaceutical)",
+      "Construction: high-rise water supply/drainage, air conditioning cooling water",
+      "Water conservancy and flood control: drainage pump stations, sluice systems"
+    ]
+  },
+  {
+    id: "v-check-3",
+    slug: "stainless-steel-check-valve",
+    name: "Stainless Steel Check Valve",
+    category: "Check Valve",
+    parentCategory: "Valves",
+    description: "Stainless steel check valve (one-way/non-return valve) opens/closes disc automatically based on medium flow to prevent backflow. Made of stainless steel for corrosion resistance, high temperature resistance, and strength.",
+    image: "/valvesPics/Check Vavle/StainlessSteelCheckValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN10/16/25/40/64" },
+      { key: "Nominal Diameter", value: "DN15 (~1/2\") ~ DN600 (~24\") and larger" },
+      { key: "Body Material", value: "304, 316/316L, 301, 302, 304L, 321, etc." },
+      { key: "Connection Methods", value: "Threaded, Flange, Wafer, Welded" }
+    ],
+    purpose: "Chemical injection lines, offshore platforms, and wastewater treatment.",
+    functions: [
+      "Preventing Backflow; Maintaining Pipeline Pressure; Preventing Medium Mixing.",
+      "Reliability: Prevents equipment damage/system failure due to backflow from pump stoppage/pressure changes.",
+      "Stability: Helps maintain pressure in areas of the system and ensures stable operation.",
+      "Purity: Prevents mixing of media from different sources when pressure changes occur, ensuring purity/safety."
+    ],
+    advantages: [
+      "Excellent corrosion resistance",
+      "High strength and high pressure resistance",
+      "Wide temperature adaptability (-196°C ~ over 800°C)",
+      "High sanitation"
+    ],
+    scenarios: [
+      "Water supply and drainage: municipal/building supply, fire protection, sewage treatment",
+      "Petrochemical: corrosive chemical media pipelines",
+      "Food/pharmaceutical: beverage, dairy, pharmaceutical production lines requiring sterility/hygiene",
+      "Power: boiler water supply, steam pipes, cooling systems",
+      "HVAC: hot/cold water circulation, prevent backflow when pumps stop",
+      "Various industrial processes: metallurgy, shipbuilding, papermaking"
+    ]
+  },
+
+  // Other Valve (2 items)
+  {
+    id: "v-other-1",
+    slug: "hydraulic-control-valve",
+    name: "Hydraulic Control Valve",
+    category: "Other Valve",
+    parentCategory: "Valves",
+    description: "A hydraulic control valve uses the pressure, flow rate, or liquid level of the medium (water) in a pipeline as a power source. Through a pre-set pilot valve and control system, it automatically opens, closes, or regulates the main valve.",
+    image: "/valvesPics/OtherVavle/HydraulicControlValve.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN10, 16, 25, 40" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN1000, and even larger" },
+      { key: "Body Materials", value: "Gray Cast Iron (HT250), Ductile Iron (QT450-10), Cast Steel (WCB), Stainless Steel, Copper Alloy, etc." },
+      { key: "Connections", value: "Flange, Threaded" }
+    ],
+    purpose: "Municipal water pressure management and fire suppression circuits.",
+    functions: [
+      "Remote control switch function / precise adjustment function",
+      "Remote Operation: Pilot valve can be installed in a convenient location (e.g., control room) to remotely open/close the main pipeline valve in inconvenient locations.",
+      "Parameter Stability: Stabilizes parameters such as pressure and flow within the required range according to set values; automatically adjusts valve opening to restore stability."
+    ],
+    advantages: [
+      "Highly automated, no external power required",
+      "Functional integration, multi-purpose valve",
+      "Smooth operation and high reliability",
+      "Improved system safety and stability"
+    ],
+    scenarios: [
+      "Building water supply and drainage systems: domestic water supply, fire water supply, water tank level control, zoned pressure reduction",
+      "Fire protection systems: pressure stabilization, pressure reduction, water hammer prevention, system overpressure relief",
+      "Water conservancy and municipal water supply: flow, water level control, pressure regulation, safety pressure relief",
+      "Industrial circulation systems: pressure and flow control for chilled water and cooling water systems in central air conditioning",
+      "Irrigation systems: zoned control and pressure management for large agricultural irrigation projects"
+    ]
+  },
+  {
+    id: "v-other-2",
+    slug: "safety-valve",
+    name: "Safety Valve",
+    category: "Other Valve",
+    parentCategory: "Valves",
+    description: "A safety valve is an automatic valve that uses the pressure of the medium itself to discharge a certain amount of fluid without any external force, preventing internal system pressure from exceeding a predetermined safety value.",
+    image: "/valvesPics/OtherVavle/SafetyValve.png",
+    specifications: [
+      { key: "Nominal Diameter", value: "DN50, DN100, etc." },
+      { key: "Valve Body Material", value: "Carbon Steel (WCB), Stainless Steel (CF8/304, CF8M/316), Alloy Steel (WC6, WC9), etc." },
+      { key: "Applicable Media", value: "Steam, Air/Gas, Liquids (Water, Oil), etc." },
+      { key: "Connection Type", value: "Flange, Threaded, Welded" }
+    ],
+    purpose: "Protecting boiler systems, pressure vessels, and storage tanks from overpressure.",
+    functions: [
+      "Overpressure relief / system protection / life and property safety",
+      "Defense: When system pressure abnormally rises, the safety valve acts as the last defense, releasing medium and forcing pressure within a safe range.",
+      "Asset Protection: Prevents overpressure to protect pressure vessels, pipelines, boilers, heat exchangers, avoiding damage/scrapping or costly repairs.",
+      "Safety: Prevents catastrophic energy release from ruptures/explosions that could cause casualties or environmental disasters."
+    ],
+    advantages: [
+      "Fully automated and fast response",
+      "High reliability",
+      "Large discharge capacity",
+      "Wide range of applications"
+    ],
+    scenarios: [
+      "Energy and power: boilers, pressure vessels, steam pipes, steam turbines",
+      "Petrochemical: reactors, distillation towers, storage tanks, LPG spherical tanks, long-distance pipelines",
+      "Pharmaceutical and food: fermentation tanks, autoclaves, food processing equipment",
+      "Other industries: air compressors, refrigeration systems, hydraulic systems, etc."
+    ]
+  },
+
+  // Strainer (2 items)
+  {
+    id: "v-strain-1",
+    slug: "stainless-steel-filters",
+    name: "Stainless Steel Filters",
+    category: "Strainer",
+    parentCategory: "Valves",
+    description: "A stainless steel filter uses internally installed filter elements (such as screens, filter bags, filter elements, or filter baskets) to intercept and remove solid particles from fluids, thereby purifying or recovering them.",
+    image: "/valvesPics/Strainer/StainlessSteelFilters.png",
+    specifications: [
+      { key: "Filtration Fineness", value: "1 to 100 μm (optional)" },
+      { key: "Operating Temperature", value: "-20°C ~ 120°C (depending on seals)" },
+      { key: "Housing Material", value: "304, 316L, etc." },
+      { key: "Connections", value: "Flange, Clamp, Threaded" }
+    ],
+    purpose: "Filing and purification in food, beverage, and chemical industries.",
+    functions: [
+      "Solid-Liquid / Solid-Gas Separation, Equipment Protection, Improved Product Purity",
+      "Separation: Removes suspended solid particles from a liquid or dust/moisture/oil mist from gases.",
+      "Equipment Protection: Installed upstream of critical equipment to prevent solid particles from entering, avoiding wear, blockage, or damage.",
+      "Product Quality: In chemical, pharmaceutical, and food industries, it ensures the purity of final products and avoids contamination."
+    ],
+    advantages: [
+      "Excellent durability and long life",
+      "Excellent corrosion resistance",
+      "Excellent high temperature and high pressure resistance",
+      "High hygiene and easy cleanability"
+    ],
+    scenarios: [
+      "Industrial Water Treatment: Raw water pretreatment, circulating cooling water, and boiler feed water",
+      "Food & Beverage: Filtration of syrups, juices, beer, cooking oil, and process water",
+      "Petrochemical: Filtration of crude oil, refined oils, solvents, and chemical raw materials",
+      "Pharmaceutical & Bioengineering: Sterile filtration of purified water, water for injection, and compressed air",
+      "Electroplating & Coating: Purification of plating solutions, paints, and coatings",
+      "Power & Metallurgy: Filtration of fuel, lubricating oil, and hydraulic oil"
+    ]
+  },
+  {
+    id: "v-strain-2",
+    slug: "y-type-strainer",
+    name: "Y-Type Strainer",
+    category: "Strainer",
+    parentCategory: "Valves",
+    description: "A Y-type strainer is a Y-shaped pipeline filtration device. It is a coarse filter that uses a metal mesh to intercept mechanical impurities such as rust, silt, and debris from fluids (liquids or gases).",
+    image: "/valvesPics/Strainer/Y-TypeStrainer.png",
+    specifications: [
+      { key: "Nominal Pressure", value: "PN10, 16, 25, and 40" },
+      { key: "Nominal Diameter", value: "DN15 ~ DN600 and larger" },
+      { key: "Valve Body Materials", value: "Cast Iron (HT250), Ductile Iron (QT450), Cast Steel (WCB), Stainless Steel, etc." },
+      { key: "Connection Methods", value: "Flange, Threaded, Butt Weld" }
+    ],
+    purpose: "General industrial protection for pumps, meters, and control valves.",
+    functions: [
+      "Protecting Critical Equipment / Purifying Media / Improving Reliability and Stability",
+      "Pump & Meter Protection: Prevents pump impeller wear or jamming. Ensures measurement accuracy of instruments like flow meters and pressure gauges.",
+      "Valve Integrity: Prevents damage or jamming of sealing surfaces of control valves, ensures regulating function.",
+      "Heat Transfer: Prevents blockage of heat exchanger flow channels, maintaining efficient heat transfer.",
+      "Batch Purity: Provides crucial purification for food, beverage, and pharmaceutical processes."
+    ],
+    advantages: [
+      "Simple, durable structure",
+      "Low flow resistance, low pressure drop",
+      "Small footprint, flexible installation",
+      "Low cost, good economical efficiency"
+    ],
+    scenarios: [
+      "Water supply and drainage systems: Protect water pumps, water meters, and supply networks",
+      "HVAC systems: Prevent blockage at boilers, heat exchangers, and cooling towers",
+      "Petrochemical industry: Filters oils and chemicals",
+      "Power industry: Used in fuel, lubrication systems, and cooling water",
+      "Industrial production: Protects spray equipment, injection molding machines, and air compressors",
+      "Irrigation systems: Prevents nozzle blockage"
+    ]
+  },
+
+  /*
   // --- PUMPS (8 products, 4 categories) ---
   {
     id: "p1",
@@ -453,4 +940,5 @@ export const products: Product[] = [
     ],
     purpose: "Applications that cannot shut down for cleaning, such as fuel lines and lubrication systems."
   }
+  */
 ];

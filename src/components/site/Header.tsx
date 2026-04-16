@@ -103,9 +103,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full z-50 pt-4 w-screen max-w-4xl"
+                      className="absolute left-0 top-full z-50 pt-4 w-72"
                     >
-                      <div className="bg-white p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-zinc-100 flex gap-16">
+                      <div className="bg-white p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-zinc-100 flex flex-col gap-8">
                         {navProductsMega.map((col) => (
                           <div key={col.title} className="flex-1 space-y-8">
                              <div className="flex flex-col gap-2">

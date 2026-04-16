@@ -1,0 +1,131 @@
+# Enoch Industry Ball Valve Product Details Text
+Collected from:
+- https://www.enoch-industry.com/product-detail/stainless-steel-ball-valve
+- https://www.enoch-industry.com/product-detail/cast-steel-ball-valve
+- https://www.enoch-industry.com/product-detail/v-type-ball-valve
+- https://www.enoch-industry.com/product-detail/welded-ball-valve
+
+## Stainless Steel Ball Valve
+Nominal Pressure: PN10, 16, 25, 40, 64, 100.
+Nominal Diameter: DN15 ~ DN300.
+Valve Body Material: 304, 316/L, etc.
+Connection Methods: Threaded, flanged, wafer, welded
+
+## Product description
+A stainless steel ball valve is a rotary shut-off valve made of stainless steel. Its core component is a sphere with a hole, which controls the flow of media by rotating 90 degrees. Due to its excellent corrosion resistance and structural strength, stainless steel ball valves are one of the most widely used valves in industrial piping systems.
+
+## Product function
+- Connecting and Cutting Off the Medium
+- Changing the Medium Flow Direction
+
+By rotating the handle or actuator 90 degrees, the channel inside the ball valve is aligned with or perpendicular to the pipeline direction, thus achieving a fully open (medium flow unimpeded) or fully closed (medium completely cut off) state.
+Mainly used in three-way, four-way, and other multi-way ball valves. By changing the direction of the ball valve's channel, the medium can be guided to different outlet pipelines.
+
+## Value advantage
+- Excellent corrosion resistance
+- Simple structure and easy maintenance
+- Low flow resistance and high flow capacity
+- Reliable sealing performance, achieving zero leakage
+
+## Application scenario
+Water supply and drainage systems: Municipal water supply, building water supply, fire protection systems, sewage treatment, etc.
+Petrochemical industry: Pipelines for transporting various corrosive chemical media.
+Food and pharmaceutical industry: Beverage, dairy, and pharmaceutical production lines, where sterility and hygiene are required.
+Power industry: Boiler water supply systems, steam pipes, and cooling systems.
+Heating, ventilation, and air conditioning (HVAC): Hot and cold water circulation systems to prevent water backflow when pumps stop.
+
+---
+
+## Cast Steel Ball Valve
+Nominal Pressure: PN 16, 25, 40, 63, 100, 160.
+Nominal Diameter: DN15 to DN1200, and even larger.
+Body Material: Standard cast steel (WCB), low-temperature cast steel (LCB), etc.
+Connection Types: Flange, threaded, and butt-weld.
+
+## Product description
+A cast steel ball valve features a body made of cast carbon steel (WCB, WCC, LCB, etc.). Its core opening and closing component is a ball with a through hole. The valve stem rotates 90 degrees to achieve full opening, full closing, or throttling of the medium.
+
+## Product function
+- Cutting Off and Connecting the Medium
+- Flow Distribution and Redirection
+
+By rotating the handle, turbine, or actuator, the ball inside the ball valve can be rotated 90 degrees, achieving full opening or full closing of the pipeline.
+For three-way ball valves (T-type or L-type), it can change the flow direction of the medium, realizing the function of distribution, merging, or switching flow paths.
+
+## Value advantage
+- High strength and good pressure resistance
+- Wide temperature range
+- Excellent sealing performance
+- Minimal flow resistance and strong flow capacity
+
+## Application scenario
+Water supply and drainage systems: Municipal water supply, building water supply, fire protection systems, sewage treatment, etc.
+Petrochemical industry: Pipelines for transporting various corrosive chemical media.
+Food and pharmaceutical industry: Beverage, dairy, and pharmaceutical production lines, where sterility and hygiene are required.
+Power industry: Boiler water supply systems, steam pipes, and cooling systems.
+Heating, ventilation, and air conditioning (HVAC): Hot and cold water circulation systems to prevent water backflow when pumps stop.
+
+---
+
+## V-Type Ball Valve
+Nominal Pressure: PN10, 16, 25, 40, 64, 100.
+Nominal Diameter: DN15 ~ DN500, and even larger.
+Body Material: Carbon steel (WCB), stainless steel (CF8/304, CF8M/316), duplex stainless steel, etc.
+Connection Types: Flange, threaded, butt-weld, and wafer.
+
+## Product description
+The V-type ball valve is a regulating ball valve and a quarter-turn valve. Its biggest difference from a standard O-type ball valve is the unique V-shaped cutout on the ball core.
+
+## Product function
+- Regulation and Control
+- Shearing Force and Self-Cleaning Function
+
+The V-type ball valve achieves precise flow control throughout the entire regulation process, exhibiting high sensitivity and making it ideal for automated process control requiring precise adjustment.
+Shearing Fibers and Particulates: During valve closing and opening, the V-shaped notch cuts through fibers, pulp, and other entangled materials in the pipeline medium.
+Preventing Jamming: For slurries containing solid particles, the V-shaped notch effectively prevents particles from becoming stuck between the ball and the valve seat, thus preventing valve jamming or seal damage. This function makes it irreplaceable in industries such as papermaking, wastewater treatment, and mining.
+
+## Value advantage
+- Excellent regulating performance (core advantage)
+- Excellent anti-clogging and self-cleaning capabilities
+- High wear resistance and long service life
+- Large flow capacity and low flow resistance
+
+## Application scenario
+Papermaking Industry: Regulating and cutting fiber slurries such as pulp, black liquor, and white water.
+Wastewater Treatment: Sludge, sewage, and media containing solid particles.
+Chemical and Petrochemical Industries: Catalyst slurries, polymers, particulate matter, crystals, etc.
+Power Industry: Pulverized coal, fly ash, and desulfurization slurry.
+Mining and Metallurgy: Slurry, tailings, dust, cement raw/clinker.
+Food and Pharmaceutical: Syrup, chocolate, granular materials, etc. (typically using sanitary design and soft seals).
+
+---
+
+## Welded Ball Valve
+Nominal Pressure: PN16, 25, 40, 63, 100, 150, 250, 420.
+Nominal Diameter: DN15 ~ DN1200.
+Valve Body Materials: Carbon Steel (WCB, WCC), Stainless Steel (304, 316, 316L), Alloy Steel (WC6, WC9), Duplex Steel (F51, F53)
+Operating Temperature: -196°C ~ +550°C (depending on valve seat and seal materials)
+
+## Product description
+A welded ball valve is a valve that is permanently connected to a piping system by welding. Its core opening and closing component is a sphere with a through-hole. Fluid flow is controlled by rotating the sphere 90 degrees. Because of its welded connection, it is considered a high-performance, permanent valve, particularly suitable for demanding applications requiring zero leakage and high safety.
+
+## Product function
+- Cutting Off and Connecting the Medium
+- Flow Regulation
+
+Open State: The ball rotates 90 degrees, aligning its passage with the pipe diameter, allowing fluid to flow through with almost no resistance and minimal pressure loss.
+Closed State: The ball rotates another 90 degrees, making its passage perpendicular to the pipe. The tight seal between the ball and the valve seat completely blocks fluid flow.
+Theoretically, flow can be regulated by partially opening the ball valve, but partial opening affects its sealing performance. Therefore, welded ball valves are primarily used as "on/off" valves, not regulating valves.
+
+## Value advantage
+- Zero leakage/excellent sealing performance
+- Compact structure and lightweight
+- High strength and excellent safety
+- Long service life and extremely low maintenance costs
+
+## Application scenario
+Oil and gas industry: long-distance pipelines (main and branch lines), urban gas pipeline networks, gathering stations, and offshore platforms.
+Chemical and petrochemical industries: pipelines for corrosive, toxic, and hazardous media.
+Power industry: heating systems, boiler feedwater, and steam pipelines.
+Urban heating systems: trunk lines for district heating and cooling.
+Industrial processes such as metallurgy and papermaking require high reliability.
