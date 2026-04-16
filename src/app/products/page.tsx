@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { PageShell } from "@/components/site/PageShell";
 import { ProductCard } from "@/components/ui/ProductCard";
@@ -8,14 +10,28 @@ import { slugify } from "@/lib/slugify";
 import { cn } from "@/lib/cn";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { jinjieberMock } from "@/mock/jinjieber";
-import { useMemo, useState } from "react";
-import { ChevronRight, LayoutGrid } from "lucide-react";
+import { useMemo, useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams();
   const categories = ["Valves", "Pumps", "Fittings"] as const;
   const [activeCategory, setActiveCategory] = useState<string>("Valves");
   const [activeSubCategory, setActiveSubCategory] = useState<string>("");
+
+  useEffect(() => {
+    const catParam = searchParams.get("category");
+    const subCatParam = searchParams.get("subCategory");
+
+    if (catParam && categories.includes(catParam as any)) {
+      setActiveCategory(catParam);
+    }
+    if (subCatParam) {
+      setActiveSubCategory(subCatParam);
+    }
+  }, [searchParams]);
 
   const groupedProducts = useMemo(() => {
     return categories.map((parentCat) => {
@@ -45,6 +61,35 @@ export default function ProductsPage() {
     });
   }, []);
 
+  useEffect(() => {
+    const applyHash = () => {
+      const raw = window.location.hash.replace(/^#/, "");
+      if (!raw) return;
+
+      // 1) Parent category match: #valves / #pumps / #fittings
+      const parentHit = groupedProducts.find((g) => g.id === raw || slugify(g.title) === raw);
+      if (parentHit) {
+        setActiveCategory(parentHit.title);
+        setActiveSubCategory("");
+        return;
+      }
+
+      // 2) Sub-category match: #gate-valves / #butterfly-valves ...
+      for (const group of groupedProducts) {
+        const subHit = group.subGroups.find((s) => slugify(s.title) === raw || s.id === raw);
+        if (subHit) {
+          setActiveCategory(group.title);
+          setActiveSubCategory(subHit.title);
+          return;
+        }
+      }
+    };
+
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, [groupedProducts]);
+
   const handleCategoryClick = (cat: string) => {
     setActiveCategory(cat);
     setActiveSubCategory("");
@@ -61,62 +106,47 @@ export default function ProductsPage() {
 
     return {
       title: group.title,
-      description: `Exploring all products within the ${group.title} category.`,
+      description: `Exploring all high-precision systems within the ${group.title} division.`,
       items: products.filter(p => p.parentCategory === activeCategory)
     };
   }, [activeCategory, activeSubCategory, groupedProducts]);
 
   return (
-    <PageShell currentPath="/products">
-      {/* Hero Section */}
-      <div className="bg-neutral-50/50 border-b border-neutral-100">
-        <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-          <SectionReveal>
-            <div className="max-w-3xl">
-              <h1 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-                Product Catalog
-              </h1>
-              <p className="mt-2 text-zinc-500">
-                Precision-engineered industrial solutions for global infrastructure.
-              </p>
-            </div>
-          </SectionReveal>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="flex flex-col lg:flex-row gap-12 py-12 md:py-20">
-          
-          {/* Left Sidebar Navigation */}
-          <aside className="lg:w-72 shrink-0">
-            <div className="lg:sticky lg:top-32 space-y-8">
-              <div className="hidden lg:block">
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4f25e4] mb-6">
-                  Catalog Navigator
-                </div>
-                <nav className="flex flex-col gap-2">
-                  {groupedProducts.map((group) => (
-                    <div key={group.title} className="flex flex-col gap-1">
-                      <button
-                        onClick={() => handleCategoryClick(group.title)}
-                        className={cn(
-                          "group flex items-center justify-between px-4 py-3 text-sm font-bold transition-all duration-200 text-left",
-                          pxn.radiusNone,
-                          activeCategory === group.title 
-                            ? "bg-neutral-900 text-white" 
-                            : "text-zinc-500 hover:bg-neutral-100 hover:text-zinc-900"
-                        )}
-                      >
-                        {group.title}
-                        <ChevronRight className={cn(
-                          "h-4 w-4 transition-transform",
-                          activeCategory === group.title ? "rotate-90" : ""
-                        )} />
-                      </button>
-                      
-                      {/* Nested Sub-navigation for active group */}
+    <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:max-w-none lg:px-10">
+      <div className="flex flex-col lg:flex-row gap-20 py-16 md:py-32">
+        
+        {/* Left Sidebar Navigation - Architectural Style */}
+        <aside className="lg:w-80 shrink-0">
+          <div className="lg:sticky lg:top-36 space-y-12">
+            <div className="hidden lg:block">
+              <nav className="flex flex-col gap-3">
+                {groupedProducts.map((group) => (
+                  <div key={group.title} className="flex flex-col gap-2">
+                    <button
+                      onClick={() => handleCategoryClick(group.title)}
+                      className={cn(
+                        "group flex items-center justify-between px-6 py-4 text-sm font-bold transition-all duration-300 text-left border border-transparent",
+                        activeCategory === group.title 
+                          ? "bg-zinc-900 text-white shadow-xl" 
+                          : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900 hover:border-zinc-100"
+                      )}
+                    >
+                      {group.title.toUpperCase()}
+                      < ChevronRight className={cn(
+                        "h-4 w-4 transition-transform duration-300",
+                        activeCategory === group.title ? "rotate-90" : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                      )} />
+                    </button>
+                    
+                    {/* Nested Sub-navigation for active group */}
+                    <AnimatePresence>
                       {activeCategory === group.title && group.subGroups.length > 0 && (
-                        <div className="flex flex-col ml-4 border-l border-neutral-200">
+                        <motion.div 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="flex flex-col ml-6 border-l border-zinc-100 overflow-hidden"
+                        >
                           {group.subGroups.map((sub) => (
                             <button
                               key={sub.title}
@@ -125,112 +155,152 @@ export default function ProductsPage() {
                                 setActiveSubCategory(sub.title);
                               }}
                               className={cn(
-                                "py-2 px-4 text-xs font-semibold text-left transition-colors duration-200 relative",
+                                "py-3 px-6 text-xs font-bold text-left transition-all duration-300 relative uppercase tracking-wider",
                                 activeSubCategory === sub.title 
-                                  ? "text-[#4f25e4]" 
-                                  : "text-zinc-400 hover:text-zinc-700"
+                                  ? "text-[#4f25e4] bg-white" 
+                                  : "text-zinc-400 hover:text-zinc-700 hover:translate-x-1"
                               )}
                             >
                               {activeSubCategory === sub.title && (
-                                <span className="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-[#4f25e4]" />
+                                <span className="absolute left-[-1px] top-4 bottom-4 w-[2px] bg-[#4f25e4]" />
                               )}
                               {sub.title}
                             </button>
                           ))}
-                        </div>
+                        </motion.div>
                       )}
-                    </div>
-                  ))}
-                </nav>
-              </div>
-
-              {/* Mobile Navigation */}
-              <div className="lg:hidden flex overflow-x-auto pb-4 gap-3 no-scrollbar border-b border-neutral-100">
-                {groupedProducts.map((group) => (
-                  <button
-                    key={group.title}
-                    onClick={() => handleCategoryClick(group.title)}
-                    className={cn(
-                      "whitespace-nowrap px-6 py-2.5 text-sm font-bold transition-all",
-                      pxn.radiusNone,
-                      activeCategory === group.title ? "bg-[#4f25e4] text-white" : "bg-neutral-100 text-zinc-500"
-                    )}
-                  >
-                    {group.title}
-                  </button>
+                    </AnimatePresence>
+                  </div>
                 ))}
-              </div>
-
-              {/* Inquiry Card */}
-              <div className="hidden lg:block p-6 bg-neutral-900 text-white relative overflow-hidden rounded-none">
-                <div className="relative z-10 space-y-4">
-                  <p className="text-xs font-bold text-white/50 uppercase tracking-widest">Inquiry Support</p>
-                  <p className="text-sm font-medium leading-relaxed">
-                    Need technical CAD files or certification documents?
-                  </p>
-                  <a href="/contact" className="inline-block text-sm font-bold text-white underline underline-offset-4 hover:text-blue-300 transition-colors">
-                    Talk to an Engineer
-                  </a>
-                </div>
-                <div className="absolute top-0 right-0 h-24 w-24 bg-[#4f25e4] blur-[60px] opacity-30" />
-              </div>
+              </nav>
             </div>
-          </aside>
 
-          {/* Main Content Area */}
-          <main className="flex-1">
-            <AnimatePresence mode="wait">
-              {visibleContent ? (
-                <motion.div
-                  key={`${activeCategory}-${activeSubCategory}`}
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="space-y-12"
+            {/* Mobile Navigation */}
+            <div className="lg:hidden flex overflow-x-auto pb-4 gap-3 no-scrollbar border-b border-zinc-100">
+              {groupedProducts.map((group) => (
+                <button
+                  key={group.title}
+                  onClick={() => handleCategoryClick(group.title)}
+                  className={cn(
+                    "whitespace-nowrap px-8 py-3 text-xs font-bold transition-all border uppercase tracking-widest",
+                    activeCategory === group.title ? "bg-zinc-900 border-zinc-900 text-white" : "bg-white border-zinc-200 text-zinc-500"
+                  )}
                 >
-                  <div className="space-y-4 border-b border-neutral-100 pb-8">
-                    <h2 className="text-3xl font-bold text-zinc-900 md:text-4xl tracking-tight">
-                      {visibleContent.title}
-                    </h2>
-                    {visibleContent.description && (
-                      <p className="text-base leading-relaxed text-zinc-500 max-w-2xl">
-                        {visibleContent.description}
-                      </p>
-                    )}
-                  </div>
+                  {group.title}
+                </button>
+              ))}
+            </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {visibleContent.items.map((product, i) => (
-                      <SectionReveal key={product.id} delay={0.05 * (i % 3)}>
-                        <ProductCard product={product} />
-                      </SectionReveal>
-                    ))}
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="py-20 text-center text-zinc-400">
-                  Select a category to view products.
+            {/* Inquiry Card - Premium Style */}
+            <div className="hidden lg:block p-10 bg-zinc-950 text-white relative overflow-hidden">
+              <div className="relative z-10 space-y-6">
+                <div className="h-10 w-px bg-[#4f25e4]" />
+                <p className="text-lg font-bold leading-tight">
+                  Precision data for mission-critical engineering.
+                </p>
+                <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-zinc-300 transition-colors uppercase tracking-widest pt-4">
+                  Request CAD Files <ChevronRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="absolute -bottom-8 -right-8 h-32 w-32 bg-[#4f25e4] blur-[80px] opacity-20" />
+            </div>
+          </div>
+        </aside>
+
+        {/* Main Content Area */}
+        <main className="flex-1">
+          <AnimatePresence mode="wait">
+            {visibleContent ? (
+              <motion.div
+                key={`${activeCategory}-${activeSubCategory}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="space-y-16"
+              >
+                <div className="space-y-8 border-b border-zinc-100 pb-12">
+                  <h2 className="text-4xl font-bold text-zinc-900 md:text-6xl tracking-tight">
+                    {visibleContent.title}
+                  </h2>
+                  {visibleContent.description && (
+                    <p className="text-xl leading-relaxed text-zinc-500 max-w-3xl font-medium">
+                      {visibleContent.description}
+                    </p>
+                  )}
                 </div>
-              )}
-            </AnimatePresence>
 
-            {/* Bottom Contact Section */}
-            <SectionReveal>
-               <div className="mt-24 p-8 md:p-12 bg-neutral-50 border border-neutral-100 flex flex-col md:flex-row items-center justify-between gap-8 rounded-none">
-                  <div className="space-y-2 text-center md:text-left">
-                     <h3 className="text-xl font-bold text-zinc-900 text-balance">Download our complete industrial product catalog</h3>
-                     <p className="text-sm text-zinc-500">Get detailed technical data for all 27+ product models.</p>
-                  </div>
-                  <button className="bg-[#4f25e4] text-white px-8 py-4 font-bold transition-transform hover:scale-105 rounded-none">
-                    Download PDF Catalog
-                  </button>
-               </div>
-            </SectionReveal>
-          </main>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                  {visibleContent.items.map((product, i) => (
+                    <SectionReveal key={product.id} delay={0.05 * (i % 3)}>
+                      <ProductCard product={product} />
+                    </SectionReveal>
+                  ))}
+                </div>
+              </motion.div>
+            ) : (
+              <div className="py-32 text-center text-zinc-400 font-bold uppercase tracking-widest text-xs">
+                Analyzing Catalog Architecture...
+              </div>
+            )}
+          </AnimatePresence>
+
+          {/* Bottom Contact Section */}
+          <SectionReveal>
+             <div className="mt-32 p-12 md:p-20 bg-zinc-50 border border-zinc-100 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className="space-y-4 text-center lg:text-left">
+                   <h3 className="text-3xl font-bold text-zinc-900 text-balance lg:text-4xl">Complete Industrial Catalog</h3>
+                   <p className="text-lg text-zinc-500 font-medium">Access detailed technical specifications for our entire fleet.</p>
+                </div>
+                <button className="bg-[#4f25e4] text-white px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] transition-all hover:scale-105 hover:bg-zinc-900 shadow-xl shadow-[#4f25e4]/20">
+                  Download v8.2 Guide
+                </button>
+             </div>
+          </SectionReveal>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <PageShell currentPath="/products">
+      {/* Hero Section - Compact */}
+      <div className="relative overflow-hidden border-b border-zinc-100 bg-zinc-950 py-14 md:py-16">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/Products/product.-nabberpng.png"
+            alt="Products page hero background"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+            unoptimized
+          />
+        </div>
+
+        <div className="relative mx-auto w-full max-w-7xl px-4 md:px-8 lg:max-w-none lg:px-10 lg:pl-16">
+          <SectionReveal>
+            <div className="max-w-4xl space-y-4">
+              <div className="h-px w-16 bg-[#4f25e4] drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]" />
+              <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
+                Global Product Registry.
+              </h1>
+              <p className="text-base text-white/90 font-medium max-w-2xl leading-relaxed md:text-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+                Precision-engineered fluid control components designed for high-stakes industrial applications across the globe.
+              </p>
+            </div>
+          </SectionReveal>
         </div>
       </div>
+
+      <Suspense fallback={<div className="py-40 text-center font-bold text-zinc-300 uppercase tracking-widest text-xs">Synchronizing Database...</div>}>
+        <ProductsContent />
+      </Suspense>
     </PageShell>
   );
 }
+
+
 

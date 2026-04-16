@@ -20,75 +20,80 @@ export const JinjieberAbout: React.FC<{
     <div>
       {/* Short mission strip */}
       {showMission && (
-        <section id="mission" className="py-8 md:py-12 bg-white scroll-mt-24">
-
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid gap-10 md:grid-cols-12 md:items-start">
-            <div className="md:col-span-4">
-              <PixendSectionLabel>About Us</PixendSectionLabel>
-            </div>
-            <div className="space-y-6 md:col-span-8">
-              <h2 className="text-2xl font-semibold leading-relaxed text-zinc-900 md:text-3xl">
-                "{about.mission}"
-              </h2>
-              {hideDeepDetails && (
-                <div className="pt-4">
-                  <ButtonLink href="/about" variant="outline" className="rounded-none px-6 py-2.5 border border-zinc-300 hover:bg-neutral-50/80">
-                    Read more
-                  </ButtonLink>
+        <section id="mission" className="pt-12 md:pt-20 pb-0 bg-white scroll-mt-24">
+          <div className="mx-auto max-w-7xl px-4 md:px-8">
+            <div className="flex flex-col lg:flex-row gap-10 items-start">
+              <div className="lg:w-1/3">
+                <div className="mt-6 flex gap-8">
+                  <div className="h-20 w-px shrink-0 bg-[#4f25e4]" aria-hidden />
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-400">
+                      {about.missionEyebrow ?? "Our Mission"}
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
+              <div className="space-y-12 lg:w-2/3">
+                <h2 className="text-2xl font-bold leading-[1.2] text-zinc-900 md:text-3xl lg:text-4xl tracking-tight">
+                  "{about.mission}"
+                </h2>
+                {hideDeepDetails && (
+                  <div className="pt-8">
+                    <ButtonLink href="/about" size="lg" variant="secondary" className="min-w-[200px] border border-zinc-200">
+                      Our Vision
+                    </ButtonLink>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <div className="mt-16 overflow-hidden relative aspect-[21/9]">
+              <Image
+                src="/banner/mission.png"
+                alt="Valve manufacturing facility"
+                fill
+                className={cn("absolute inset-0 object-cover object-center transition-transform duration-1000 hover:scale-105", pxn.radiusGrid)}
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-zinc-950/10 pointer-events-none" />
             </div>
           </div>
-          
-          <div className="mt-12 overflow-hidden bg-neutral-100 relative aspect-[21/9]">
-            <Image
-              src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80"
-              alt="Valve manufacturing facility"
-              fill
-              className={cn("absolute inset-0 object-cover object-center", pxn.radiusHeroMedia, pxn.shadowGrid)}
-              unoptimized
-            />
-          </div>
-        </div>
-      </section>
+        </section>
       )}
 
       {/* Deep details */}
       {showStory && (
-        <section id="our-story" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-white scroll-mt-24">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="mt-8 grid gap-12 lg:grid-cols-12">
-              <div className="space-y-6 lg:col-span-7">
-                <PixendSectionLabel>Who We Are</PixendSectionLabel>
-                {about.whoWeAre.split("\n\n").map((p, idx) => (
-                  <p key={idx} className="text-base leading-relaxed text-neutral-600">
-                    {p}
-                  </p>
-                ))}
+        <section id="our-story" className="pt-12 md:pt-20 pb-32 md:pb-48 bg-white scroll-mt-24">
+          <div className="mx-auto max-w-7xl px-4 md:px-8">
+            <div className="grid gap-24 lg:grid-cols-12">
+              <div className="space-y-12 lg:col-span-7">
+                <div className="space-y-8">
+                  {about.whoWeAre.split("\n\n").map((p, idx) => (
+                    <p key={idx} className="text-xl leading-relaxed text-zinc-500 font-medium">
+                      {p}
+                    </p>
+                  ))}
+                </div>
               </div>
 
-              <div className="space-y-6 lg:col-span-5">
+              <div className="lg:col-span-5">
                 <div
                   className={cn(
-                    pxn.radiusMajor,
-                    "bg-[#fafafa] border border-neutral-100 p-8 h-full",
-                    pxn.shadowMajor,
+                    pxn.radiusGrid,
+                    "bg-zinc-50 border border-zinc-100 p-12 h-full flex flex-col justify-center",
+                    "shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)]"
                   )}
                 >
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500 mb-6">
-                    What sets us apart
-                  </div>
-                  <ul className="space-y-4 text-sm leading-relaxed text-zinc-700">
+                  <ul className="space-y-8">
                     {about.whatSetsUsApart.map((item, idx) => {
                       const [bold, reset] = item.split(" — ");
                       return (
-                        <li key={idx} className="flex gap-3 items-start">
-                          <span className="mt-1.5 h-2 w-2 shrink-0 rounded-none bg-[#4f25e4]" aria-hidden />
-                          <span>
-                             <strong className="font-semibold text-zinc-900">{bold}</strong>
-                             {reset ? ` — ${reset}` : ''}
-                          </span>
+                        <li key={idx} className="flex gap-6 items-start group">
+                          <span className="mt-2.5 h-1.5 w-6 shrink-0 bg-[#4f25e4] transition-all group-hover:w-10" aria-hidden />
+                          <div className="flex flex-col gap-2">
+                             <div className="text-xl font-bold text-zinc-900">{bold}</div>
+                             {reset && <div className="text-base text-zinc-500 leading-relaxed font-medium">{reset}</div>}
+                          </div>
                         </li>
                       );
                     })}
@@ -102,3 +107,4 @@ export const JinjieberAbout: React.FC<{
     </div>
   );
 };
+

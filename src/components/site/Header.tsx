@@ -10,13 +10,14 @@ import {
   navIndustriesLinks,
   navAboutLinks,
 } from "@/mock/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface HeaderProps {
   currentPath: string;
 }
 
 type DesktopMenu = "about" | "products" | "industries" | "capabilities" | null;
-type MobileAccordion = "products" | "industries" | null;
+type MobileAccordion = "products" | "industries" | "about" | null;
 
 export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -24,12 +25,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   const [mobileAccordion, setMobileAccordion] = useState<MobileAccordion>(null);
   const desktopWrapRef = useRef<HTMLDivElement>(null);
 
-  const productsActive =
-    currentPath === "/products" || currentPath.startsWith("/products/");
-  const industriesActive =
-    currentPath === "/industries" || currentPath.startsWith("/industries/");
-  const aboutActive =
-    currentPath === "/about" || currentPath.startsWith("/about/");
+  const productsActive = currentPath === "/products" || currentPath.startsWith("/products/");
+  const industriesActive = currentPath === "/industries" || currentPath.startsWith("/industries/");
+  const aboutActive = currentPath === "/about" || currentPath.startsWith("/about/");
 
   useEffect(() => {
     if (!desktopMenu) return;
@@ -54,11 +52,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
 
   const linkClass = (active: boolean) =>
     cn(
-      "rounded-none px-3 py-2 text-sm font-medium transition-colors",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+      "px-5 py-3 text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300",
       active
-        ? "bg-zinc-100 text-zinc-950 shadow-sm"
-        : "text-zinc-600 hover:bg-zinc-100/90 hover:text-zinc-950",
+        ? "text-zinc-900 border-b-2 border-[#4f25e4]"
+        : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50"
     );
 
   const closeAll = () => {
@@ -69,392 +66,235 @@ export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.06),0_8px_24px_rgba(15,23,42,0.04)] backdrop-blur-md">
-        <div
-          ref={desktopWrapRef}
-          className="relative mx-auto max-w-6xl px-4 py-3"
-        >
-          <div className="flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-50 h-20 shrink-0 bg-white/95 border-b border-zinc-100 backdrop-blur-xl">
+        <div ref={desktopWrapRef} className="h-full w-full px-4 md:px-8 lg:px-10">
+          <div className="flex h-full items-center justify-between gap-12">
             <Link
               href="/"
-              className="shrink-0 rounded-none px-1 font-display text-lg font-semibold tracking-tight text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="shrink-0 flex items-center gap-2 group"
               aria-label="Jinjieber Home"
             >
-              Jinjieber
+              <div className="h-8 w-8 bg-[#4f25e4] flex items-center justify-center text-white font-black text-xl italic group-hover:rotate-12 transition-transform">J</div>
+              <span className="font-bold text-xl tracking-tightest text-zinc-900 uppercase italic">Jinjieber</span>
             </Link>
 
-            <nav
-              className="hidden flex-1 flex-wrap items-center justify-center gap-0.5 lg:flex"
-              aria-label="Primary"
-            >
-              <Link
-                href="/"
-                className={linkClass(currentPath === "/")}
-                onClick={() => setDesktopMenu(null)}
-              >
+            <nav className="hidden flex-1 items-center justify-center lg:flex" aria-label="Primary">
+              <Link href="/" className={linkClass(currentPath === "/")} onClick={() => setDesktopMenu(null)}>
                 Home
               </Link>
 
+              {/* Products Mega Menu */}
               <div 
-                className="relative"
+                className="relative h-full flex items-center"
                 onMouseEnter={() => setDesktopMenu("products")}
                 onMouseLeave={() => setDesktopMenu(null)}
               >
                 <Link
                   href="/products"
-                  className={cn(
-                    linkClass(desktopMenu === "products" || productsActive),
-                    "inline-flex items-center gap-1",
-                  )}
+                  className={cn(linkClass(desktopMenu === "products" || productsActive), "inline-flex items-center gap-1.5")}
                   onClick={() => setDesktopMenu(null)}
                 >
                   Products
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 shrink-0 transition-transform",
-                      desktopMenu === "products" && "rotate-180",
-                    )}
-                    aria-hidden
-                  />
+                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-300", desktopMenu === "products" && "rotate-180")} />
                 </Link>
-                {desktopMenu === "products" ? (
-                  <div
-                    id="nav-products-panel"
-                    className="absolute left-0 top-full z-50 pt-2 w-max max-w-[min(48rem,calc(100vw-2rem))]"
-                    role="navigation"
-                    aria-label="Products overview"
-                  >
-                    <div className="rounded-none bg-white p-5 shadow-[0_16px_48px_rgba(15,23,42,0.12)] border border-neutral-100 backdrop-blur-md">
-                      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8">
+                <AnimatePresence>
+                  {desktopMenu === "products" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-1/2 -translate-x-1/2 top-full z-50 pt-4 w-screen max-w-4xl"
+                    >
+                      <div className="bg-white p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-zinc-100 flex gap-16">
                         {navProductsMega.map((col) => (
-                          <div key={col.title} className="min-w-0 max-w-[15rem]">
-                            <Link
-                              href={col.sectionHref}
-                              className="rounded-none text-sm font-semibold text-zinc-900 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                              onClick={() => setDesktopMenu(null)}
-                            >
-                              {col.title}
-                            </Link>
-                            <ul className="mt-3 space-y-0.5">
-                              {col.links.map((l) => (
-                                <li key={l.href}>
-                                  <Link
-                                    href={l.href}
-                                    className="block rounded-lg px-1 py-1.5 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/30"
-                                    onClick={() => setDesktopMenu(null)}
-                                  >
-                                    {l.label}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
+                          <div key={col.title} className="flex-1 space-y-8">
+                             <div className="flex flex-col gap-2">
+                                <Link
+                                  href={col.sectionHref}
+                                  className="text-lg font-bold text-zinc-900 border-b border-transparent hover:border-zinc-900 transition-all"
+                                  onClick={() => setDesktopMenu(null)}
+                                >
+                                  {col.title}
+                                </Link>
+                             </div>
+                             <ul className="space-y-3">
+                                {col.links.map((l) => (
+                                  <li key={l.href}>
+                                    <Link
+                                      href={l.href}
+                                      className="text-sm font-medium text-zinc-500 hover:text-[#4f25e4] transition-colors"
+                                      onClick={() => setDesktopMenu(null)}
+                                    >
+                                      {l.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                             </ul>
                           </div>
                         ))}
                       </div>
-                    </div>
-                  </div>
-                ) : null}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
+              {/* Industries Dropdown */}
               <div 
-                className="relative"
+                className="relative h-full flex items-center"
                 onMouseEnter={() => setDesktopMenu("industries")}
                 onMouseLeave={() => setDesktopMenu(null)}
               >
                 <Link
                   href="/industries"
-                  className={cn(
-                    linkClass(desktopMenu === "industries" || industriesActive),
-                    "inline-flex items-center gap-1",
-                  )}
+                  className={cn(linkClass(desktopMenu === "industries" || industriesActive), "inline-flex items-center gap-1.5")}
                   onClick={() => setDesktopMenu(null)}
                 >
                   Industries
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 shrink-0 transition-transform",
-                      desktopMenu === "industries" && "rotate-180",
-                    )}
-                    aria-hidden
-                  />
+                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-300", desktopMenu === "industries" && "rotate-180")} />
                 </Link>
-                {desktopMenu === "industries" ? (
-                  <div
-                    id="nav-industries-panel"
-                    className="absolute left-0 top-full z-50 pt-2 w-max min-w-[12rem]"
-                    role="menu"
-                  >
-                    <div className="rounded-none bg-white p-3 shadow-[0_16px_48px_rgba(15,23,42,0.12)] border border-neutral-100 backdrop-blur-md">
-                      <ul className="flex flex-col gap-0.5">
-                        {navIndustriesLinks.map((l) => (
-                          <li key={l.href}>
-                            <Link
-                              href={l.href}
-                              role="menuitem"
-                              className="block rounded-none px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35"
-                              onClick={() => setDesktopMenu(null)}
-                            >
-                              {l.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ) : null}
+                <AnimatePresence>
+                  {desktopMenu === "industries" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-0 top-full z-50 pt-4 w-72"
+                    >
+                      <div className="bg-white p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-zinc-100">
+                        <ul className="space-y-4">
+                          {navIndustriesLinks.map((l) => (
+                            <li key={l.href}>
+                              <Link
+                                href={l.href}
+                                className="block text-sm font-bold text-zinc-500 hover:text-[#4f25e4] transition-colors uppercase tracking-widest"
+                                onClick={() => setDesktopMenu(null)}
+                              >
+                                {l.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
+              {/* About Dropdown */}
               <div 
-                className="relative"
+                className="relative h-full flex items-center"
                 onMouseEnter={() => setDesktopMenu("about")}
                 onMouseLeave={() => setDesktopMenu(null)}
               >
                 <Link
                   href="/about"
-                  className={cn(
-                    linkClass(desktopMenu === "about" || aboutActive),
-                    "inline-flex items-center gap-1",
-                  )}
+                  className={cn(linkClass(desktopMenu === "about" || aboutActive), "inline-flex items-center gap-1.5")}
                   onClick={() => setDesktopMenu(null)}
                 >
-                  About Us
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 shrink-0 transition-transform",
-                      desktopMenu === "about" && "rotate-180",
-                    )}
-                    aria-hidden
-                  />
+                  About
+                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-300", desktopMenu === "about" && "rotate-180")} />
                 </Link>
-                {desktopMenu === "about" ? (
-                  <div
-                    id="nav-about-panel"
-                    className="absolute left-0 top-full z-50 pt-2 w-max min-w-[12rem]"
-                    role="menu"
-                  >
-                    <div className="rounded-[24px] bg-white p-3 shadow-[0_16px_48px_rgba(15,23,42,0.12)] border border-neutral-100 backdrop-blur-md">
-                      <ul className="flex flex-col gap-0.5">
-                        {navAboutLinks.map((l) => (
-                          <li key={l.href}>
-                            <Link
-                              href={l.href}
-                              role="menuitem"
-                              className="block rounded-none px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35"
-                              onClick={() => setDesktopMenu(null)}
-                            >
-                              {l.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ) : null}
+                <AnimatePresence>
+                  {desktopMenu === "about" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-0 top-full z-50 pt-4 w-72"
+                    >
+                      <div className="bg-white p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-zinc-100">
+                        <ul className="space-y-4">
+                          {navAboutLinks.map((l) => (
+                            <li key={l.href}>
+                              <Link
+                                href={l.href}
+                                className="block text-sm font-bold text-zinc-500 hover:text-[#4f25e4] transition-colors uppercase tracking-widest"
+                                onClick={() => setDesktopMenu(null)}
+                              >
+                                {l.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-
             </nav>
 
-            <div className="hidden shrink-0 lg:block">
-              <ButtonLink href="/contact" variant="primary" size="md">
-                Request a Quote
+            <div className="hidden lg:block shrink-0">
+              <ButtonLink href="/contact" variant="primary" className="bg-[#4f25e4] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] shadow-xl shadow-[#4f25e4]/20 hover:scale-105 transition-all rounded-none">
+                Contact Us
               </ButtonLink>
             </div>
 
             <button
               type="button"
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-neutral-100 text-zinc-900 transition-colors hover:bg-neutral-200/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/35 lg:hidden"
-              aria-expanded={mobileNavOpen}
-              aria-controls="mobile-nav"
-              aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
+              className="inline-flex h-12 w-12 items-center justify-center bg-zinc-900 text-white lg:hidden"
               onClick={() => setMobileNavOpen((v) => !v)}
             >
-              {mobileNavOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+              {mobileNavOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {mobileNavOpen ? (
-          <div
-            id="mobile-nav"
-            className="max-h-[min(70vh,calc(100dvh-5rem))] overflow-y-auto bg-white px-4 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-md lg:hidden"
-          >
-            <nav className="flex flex-col gap-1" aria-label="Mobile primary">
-              <Link
-                href="/"
-                onClick={closeAll}
-                className={linkClass(currentPath === "/")}
-              >
-                Home
-              </Link>
-
-              <button
-                type="button"
-                className={cn(
-                  linkClass(mobileAccordion === "products"),
-                  "flex w-full items-center justify-between text-left",
-                )}
-                aria-expanded={mobileAccordion === "products"}
-                aria-controls="mobile-products-accordion"
-                onClick={() =>
-                  setMobileAccordion((a) =>
-                    a === "products" ? null : "products",
-                  )
-                }
-              >
-                Products
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 shrink-0 transition-transform",
-                    mobileAccordion === "products" && "rotate-180",
-                  )}
-                  aria-hidden
-                />
-              </button>
-              {mobileAccordion === "products" ? (
-                <div
-                  id="mobile-products-accordion"
-                  className="space-y-3 rounded-none bg-neutral-50 p-3 shadow-[0_4px_20px_rgba(15,23,42,0.06)]"
-                >
-                  {navProductsMega.map((col) => (
-                    <div key={col.title}>
-                      <Link
-                        href={col.sectionHref}
-                        className="text-sm font-semibold text-zinc-900 hover:underline"
-                        onClick={closeAll}
-                      >
-                        {col.title}
-                      </Link>
-                      <ul className="mt-2 space-y-1 pl-3">
-                        {col.links.map((l) => (
-                          <li key={l.href}>
-                            <Link
-                              href={l.href}
-                              className="block py-1 text-sm text-zinc-600 hover:text-zinc-950"
-                              onClick={closeAll}
-                            >
-                              {l.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-
-              <button
-                type="button"
-                className={cn(
-                  linkClass(mobileAccordion === "industries"),
-                  "flex w-full items-center justify-between text-left",
-                )}
-                aria-expanded={mobileAccordion === "industries"}
-                aria-controls="mobile-industries-accordion"
-                onClick={() =>
-                  setMobileAccordion((a) =>
-                    a === "industries" ? null : "industries",
-                  )
-                }
-              >
-                Industries
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 shrink-0 transition-transform",
-                    mobileAccordion === "industries" && "rotate-180",
-                  )}
-                  aria-hidden
-                />
-              </button>
-              {mobileAccordion === "industries" ? (
-                <div
-                  id="mobile-industries-accordion"
-                  className="space-y-1 rounded-[20px] bg-neutral-50 px-2 py-2 shadow-[0_4px_20px_rgba(15,23,42,0.06)]"
-                >
-                  <ul className="flex flex-col gap-0.5">
-                    {navIndustriesLinks.map((l) => (
-                      <li key={l.href}>
-                        <Link
-                          href={l.href}
-                          className="block rounded-none px-2 py-2 text-sm text-zinc-600 hover:bg-white hover:text-zinc-950"
-                          onClick={closeAll}
-                        >
-                          {l.label}
-                        </Link>
-                      </li>
+        <AnimatePresence>
+          {mobileNavOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="max-h-[80vh] overflow-y-auto bg-white border-t border-zinc-100 lg:hidden"
+            >
+              <nav className="flex flex-col p-6 gap-2" aria-label="Mobile Navigation">
+                <Link href="/" onClick={closeAll} className="p-4 text-sm font-bold uppercase tracking-widest border-b border-zinc-50">Home</Link>
+                
+                <button onClick={() => setMobileAccordion(a => a === "products" ? null : "products")} className="flex justify-between p-4 text-sm font-bold uppercase tracking-widest border-b border-zinc-50">
+                  Products <ChevronDown className={cn("h-4 w-4 transition-transform", mobileAccordion === "products" && "rotate-180")} />
+                </button>
+                {mobileAccordion === "products" && (
+                  <div className="bg-zinc-50 p-6 flex flex-col gap-6">
+                    {navProductsMega.map(col => (
+                      <div key={col.title} className="space-y-4">
+                        <ul className="space-y-2 pl-4">
+                          {col.links.map(l => (
+                            <li key={l.href}><Link href={l.href} onClick={closeAll} className="text-sm font-medium text-zinc-500">{l.label}</Link></li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-              ) : null}
-
-
-
-
-
-              <button
-                type="button"
-                className={cn(
-                  linkClass(mobileAccordion === "about"),
-                  "flex w-full items-center justify-between text-left mt-2",
+                  </div>
                 )}
-                aria-expanded={mobileAccordion === "about"}
-                aria-controls="mobile-about-accordion"
-                onClick={() =>
-                  setMobileAccordion((a) =>
-                    a === "about" ? null : "about",
-                  )
-                }
-              >
-                About Us
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 shrink-0 transition-transform",
-                    mobileAccordion === "about" && "rotate-180",
-                  )}
-                  aria-hidden
-                />
-              </button>
-              {mobileAccordion === "about" ? (
-                <div
-                  id="mobile-about-accordion"
-                  className="space-y-1 rounded-[20px] bg-neutral-50 px-2 py-2 shadow-[0_4px_20px_rgba(15,23,42,0.06)]"
-                >
-                  <ul className="flex flex-col gap-0.5">
-                    {navAboutLinks.map((l) => (
-                      <li key={l.href}>
-                        <Link
-                          href={l.href}
-                          className="block rounded-none px-2 py-2 text-sm text-zinc-600 hover:bg-white hover:text-zinc-950"
-                          onClick={closeAll}
-                        >
-                          {l.label}
-                        </Link>
-                      </li>
+
+                <button onClick={() => setMobileAccordion(a => a === "industries" ? null : "industries")} className="flex justify-between p-4 text-sm font-bold uppercase tracking-widest border-b border-zinc-50">
+                  Industries <ChevronDown className={cn("h-4 w-4 transition-transform", mobileAccordion === "industries" && "rotate-180")} />
+                </button>
+                {mobileAccordion === "industries" && (
+                  <div className="bg-zinc-50 p-6 flex flex-col gap-4">
+                    {navIndustriesLinks.map(l => (
+                      <Link key={l.href} href={l.href} onClick={closeAll} className="text-sm font-bold text-zinc-500 uppercase tracking-widest">{l.label}</Link>
                     ))}
-                  </ul>
-                </div>
-              ) : null}
-            </nav>
-          </div>
-        ) : null}
+                  </div>
+                )}
+
+                <button onClick={() => setMobileAccordion(a => a === "about" ? null : "about")} className="flex justify-between p-4 text-sm font-bold uppercase tracking-widest border-b border-zinc-50">
+                  About <ChevronDown className={cn("h-4 w-4 transition-transform", mobileAccordion === "about" && "rotate-180")} />
+                </button>
+                {mobileAccordion === "about" && (
+                  <div className="bg-zinc-50 p-6 flex flex-col gap-4">
+                    {navAboutLinks.map(l => (
+                      <Link key={l.href} href={l.href} onClick={closeAll} className="text-sm font-bold text-zinc-500 uppercase tracking-widest">{l.label}</Link>
+                    ))}
+                  </div>
+                )}
+                <Link href="/contact" onClick={closeAll} className="p-4 text-sm font-bold uppercase tracking-widest text-[#4f25e4]">Contact Us</Link>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
-
-      <div
-        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 p-3 shadow-[0_-12px_40px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[padding:max(0px)]:pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden"
-        aria-label="Request a quote"
-      >
-        <ButtonLink
-          href="/contact"
-          variant="primary"
-          size="md"
-          className="w-full"
-        >
-          Request a Quote
-        </ButtonLink>
-      </div>
     </>
   );
 };
+

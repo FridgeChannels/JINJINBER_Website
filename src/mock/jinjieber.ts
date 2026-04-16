@@ -5,10 +5,17 @@ export const jinjieberMock = {
     cta: [
       { label: "Request a Quote", href: "/contact" },
       { label: "Explore Products", href: "/products" }
+    ],
+    images: [
+      "/banner/jjb-banner.png",
+      "/banner/jjb-banner2.png",
+      "/banner/jjb-banner3.png",
+      "/banner/jjb-banner4.png"
     ]
   },
   about: {
     whoWeAre: "Jinjieber is a world-class manufacturer and supplier of industrial valves, pumps, and fluid control solutions. Founded in 1988, we bring over 35 years of engineering expertise, manufacturing excellence, and unwavering commitment to quality to customers across the globe.\n\nHeadquartered in China with strategic operations serving North America, Europe, and the Middle East, Jinjieber has grown from a specialized casting workshop into a fully integrated valve and pump enterprise — trusted by engineers, contractors, and distributors on every continent.",
+    missionEyebrow: "Our Mission",
     mission: "To engineer reliable, high-performance flow control solutions that protect lives, conserve resources, and power industries — delivered with integrity, precision, and speed.",
     whatSetsUsApart: [
       "35+ Years of Manufacturing Heritage — Deep roots in casting, forging, and precision machining since 1988",
@@ -99,35 +106,38 @@ export const jinjieberMock = {
   industries: [
     {
       title: "Oil & Gas",
-      image: "/placeholders/Industry/oil.webp",
+      image: "/placeholders/Industry/industry-oil.png",
       description: "From upstream drilling to downstream refining and distribution, Jinjieber supplies API-certified gate, ball, check, and plug valves built to withstand extreme pressures, temperatures, and corrosive environments. Our products are trusted on pipelines, platforms, and processing facilities across the Middle East, North America, and Central Asia.",
       keyProducts: "API 600/602/603 Gate Valves · API 6D Ball Valves · Pressure Seal Valves · Pipeline Check Valves"
     },
     {
       title: "Municipal Water & Wastewater",
-      image: "/placeholders/Industry/water.jpg",
+      image: "/placeholders/Industry/water.png",
       description: "Clean water is a human right. Jinjieber provides resilient-seated gate valves, butterfly valves, and check valves specifically designed for drinking water systems, water treatment plants, and wastewater infrastructure. All products meet AWWA standards and are NSF/ANSI 61 certified for contact with potable water.",
       keyProducts: "AWWA C509/C515 Gate Valves · AWWA C504 Butterfly Valves · Silent Check Valves · Air Release Valves"
     },
 
     {
       title: "Irrigation & Agriculture",
+      image: "/placeholders/Industry/irrigation.png",
       description: "Efficient water management starts with reliable flow control. Our butterfly valves, check valves, and centrifugal pumps help agricultural operations maximize water delivery while minimizing waste — from drip irrigation networks to large-scale canal systems.",
       keyProducts: "Butterfly Valves · Foot Valves · Centrifugal Irrigation Pumps · Booster Pump Systems"
     },
     {
       title: "Fire Protection",
+      image: "/placeholders/Industry/fire.png",
       description: "When lives are on the line, there's no room for compromise. Jinjieber's UL/FM listed fire protection valves and pumps are installed in commercial buildings, industrial facilities, airports, and high-rise towers worldwide. Every product undergoes rigorous third-party testing and certification.",
       keyProducts: "UL/FM OS&Y Gate Valves · Alarm Check Valves · Deluge Valves · Fire Pump Packages · Indicator Posts"
     },
     {
       title: "Power Generation",
-      image: "/placeholders/Industry/power.webp",
+      image: "/placeholders/Industry/power.png",
       description: "Reliable valves for thermal, nuclear, and renewable energy facilities. Our high-temperature, high-pressure globe, gate, and check valves are engineered for steam systems, cooling circuits, and turbine auxiliaries.",
       keyProducts: "High Pressure Gate Valves · Chrome-Moly Globe Valves · Parallel Slide Valves"
     },
     {
       title: "Building & HVAC",
+      image: "/placeholders/Industry/6builging.png",
       description: "From comfort cooling to heating systems, Jinjieber supplies balancing valves, butterfly valves, and control valves for commercial and residential buildings — engineered for long service life and energy efficiency.",
       keyProducts: "Dynamic Balancing Valves · Static Balancing Valves · Motorized Control Valves"
     }
@@ -173,44 +183,56 @@ export const jinjieberMock = {
   capabilities: {
     foundry: {
       title: "Foundry & Casting",
-      image: "foundry_casting_industrial_1776254441694.png",
+      image: "/placeholders/WhyChooseJJB/1casting.png",
       details: [
         "Sand casting, investment casting, and precision lost-wax casting",
-        "Materials: Cast iron, ductile iron, carbon steel, stainless steel (CF8, CF8M, CF3, CF3M), duplex steel, bronze, and specialty alloys",
-        "Capacity: 30,000+ metric tons per year"
+        "Materials: Cast iron, ductile iron, carbon steel, stainless steel, and specialty alloys",
+        "Total casting capacity exceeding 30,000 metric tons per year"
       ]
     },
     forging: {
       title: "Forging",
-      image: "forging_industrial_press_1776254468799.png",
+      image: "/placeholders/WhyChooseJJB/2forging.png",
       details: [
-        "Closed-die and open-die forging for high-pressure valve bodies, bonnets, and trim components",
-        "Forging presses up to 4,000 tons"
+        "Closed-die and open-die forging for high-pressure valve bodies and components",
+        "State-of-the-art forging presses up to 4,000 tons",
+        "Ensures superior grain structure and mechanical integrity"
       ]
     },
     cnc: {
       title: "CNC Machining",
-      image: "cnc_machining_industrial_1776254494983.png",
+      image: "/placeholders/WhyChooseJJB/3 CNCMachine.png",
       details: [
-        "50+ CNC machining centers including 3-axis, 4-axis, and 5-axis machines",
-        "Tolerances to ±0.01mm for critical sealing surfaces"
+        "50+ advanced CNC machining centers including 4-axis and 5-axis machines",
+        "Precision tolerances to ±0.01mm for critical sealing surfaces",
+        "Automated machining processes for consistent quality and high output"
       ]
     },
     assembly: {
-      title: "Assembly & Testing",
-      image: "assembly_testing_industrial_1776254522344.png",
+      title: "Precision Assembly",
+      image: "/placeholders/WhyChooseJJB/4 Assembly.png",
       details: [
-        "Dedicated clean-room assembly areas for fire protection and potable water products",
-        "100% hydrostatic shell and seat testing per API 598 / EN 12266",
-        "Pneumatic low-pressure seat testing, fugitive emission testing, and cryogenic testing available"
+        "Dedicated clean-room assembly environments for mission-critical products",
+        "Standardized assembly procedures following global manufacturing best practices",
+        "Expert technicians trained in high-spec industrial valve and pump assembly"
       ]
     },
-    surface: {
-      title: "Surface Treatment",
-      image: "surface_treatment_industrial_1776254545647.png",
+    testing: {
+      title: "Quality Testing",
+      image: "/placeholders/WhyChooseJJB/5Testing.png",
       details: [
-        "Epoxy coating (FBE), powder coating, hot-dip galvanizing, electroless nickel plating, and PTFE lining",
-        "Salt spray testing up to 1,000+ hours for corrosion validation"
+        "100% hydrostatic and pneumatic shell and seat testing per API 598",
+        "Advanced spectral analysis, ultrasonic testing, and X-ray validation",
+        "Fugitive emission and cryogenic testing for extreme environment performance"
+      ]
+    },
+    packing: {
+      title: "Packing & Logistics",
+      image: "/placeholders/WhyChooseJJB/6Packing.png",
+      details: [
+        "Professional industrial packaging ensuring damage-free global transit",
+        "Vapor Phase Corrosion Inhibitor (VPCI) protection for long-term storage",
+        "Integrated logistics management for sea, air, and land distribution"
       ]
     }
   },
