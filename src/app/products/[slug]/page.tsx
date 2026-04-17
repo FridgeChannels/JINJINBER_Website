@@ -122,7 +122,7 @@ export default function ProductDetailPage({
                   </h3>
                   <div className={cn(
                     "overflow-hidden border border-neutral-100",
-                    pxn.radiusMinor
+                    pxn.radiusCard
                   )}>
                     <table className="w-full text-left text-sm">
                       <thead className="bg-neutral-50 text-zinc-500 uppercase tracking-wider font-bold text-[11px]">
@@ -221,7 +221,7 @@ export default function ProductDetailPage({
                     href="/contact"
                     className={cn(
                       "flex-1 inline-flex justify-center items-center bg-[#4f25e4] px-8 py-4 text-lg font-bold text-white transition-all hover:scale-[1.02] active:scale-[0.98]",
-                      pxn.radiusButton
+                      pxn.radiusCta
                     )}
                   >
                     Request a Quote

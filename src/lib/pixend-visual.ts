@@ -3,6 +3,8 @@
  * 与 Hero 已落地的 `rounded-[30px]` CTA、`rounded-[32px]` FAQ 外壳一致。
  */
 export const pixendVisual = {
+  /** 无圆角（标签、分割线等） */
+  radiusNone: "rounded-none",
   /** 顶区大媒体、About / Partnership 横幅 */
   radiusHeroMedia: "rounded-none",
   /** FAQ 主卡、证言区、定价侧栏、Let’s talk、About 侧栏信息卡 */

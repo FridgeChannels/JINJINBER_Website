@@ -2,11 +2,9 @@
 
 import * as React from "react";
 import { jinjieberMock } from "@/mock/jinjieber";
-import { PixendSectionLabel } from "@/components/pixend/PixendPrimitives";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { cn } from "@/lib/cn";
-import { Mail, MapPin, Globe, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Mail, MapPin, ChevronRight } from "lucide-react";
 
 export const JinjieberContact: React.FC = () => {
   const { contact } = jinjieberMock;
@@ -23,9 +21,51 @@ export const JinjieberContact: React.FC = () => {
     []
   );
   const [marketSector, setMarketSector] = React.useState<string>(marketSectorOptions[0]?.value ?? "");
+  const [contactName, setContactName] = React.useState("");
+  const [enterprise, setEnterprise] = React.useState("");
+  const [primaryEmail, setPrimaryEmail] = React.useState("");
+  const [technicalRequest, setTechnicalRequest] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  /** Shown only after a successful server response; no error copy is surfaced to visitors. */
+  const [acknowledged, setAcknowledged] = React.useState(false);
+
+  const acknowledgmentCopy =
+    "Thank you for your inquiry. We have received your submission in full, and our technical team will review your specifications carefully. A representative will contact you shortly to discuss the appropriate next steps.";
 
   const marketSectorLabel =
     marketSectorOptions.find((o) => o.value === marketSector)?.label ?? marketSectorOptions[0]?.label ?? "";
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setAcknowledged(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contactName,
+          enterprise,
+          primaryEmail,
+          marketSector: marketSectorLabel,
+          technicalRequest,
+        }),
+      });
+      if (!res.ok) {
+        return;
+      }
+      setAcknowledged(true);
+      setContactName("");
+      setEnterprise("");
+      setPrimaryEmail("");
+      setTechnicalRequest("");
+      setMarketSector(marketSectorOptions[0]?.value ?? "");
+    } catch {
+      /* Intentionally silent: no error messaging on the client. */
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact-section" className="py-24 md:py-48 bg-white overflow-hidden">
@@ -83,22 +123,61 @@ export const JinjieberContact: React.FC = () => {
                   <p className="text-zinc-500 font-medium">Please provide technical requirements for priority processing.</p>
                 </div>
 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={onSubmit}>
+                  {acknowledged && (
+                    <p
+                      role="status"
+                      aria-live="polite"
+                      className="text-sm font-medium leading-relaxed text-zinc-700 border-l-2 border-[#4f25e4] pl-5 py-1"
+                    >
+                      {acknowledgmentCopy}
+                    </p>
+                  )}
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Contact Name</label>
-                      <input type="text" placeholder="John Smith" className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium" />
+                      <label htmlFor="contact-name" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Contact Name</label>
+                      <input
+                        id="contact-name"
+                        name="contactName"
+                        type="text"
+                        required
+                        autoComplete="name"
+                        value={contactName}
+                        onChange={(ev) => setContactName(ev.target.value)}
+                        placeholder="John Smith"
+                        className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium"
+                      />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Enterprise</label>
-                      <input type="text" placeholder="Global Eng. Group" className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium" />
+                      <label htmlFor="contact-enterprise" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Enterprise</label>
+                      <input
+                        id="contact-enterprise"
+                        name="enterprise"
+                        type="text"
+                        required
+                        autoComplete="organization"
+                        value={enterprise}
+                        onChange={(ev) => setEnterprise(ev.target.value)}
+                        placeholder="Global Eng. Group"
+                        className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium"
+                      />
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Primary Email</label>
-                      <input type="email" placeholder="solutions@enterprise.com" className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium" />
+                      <label htmlFor="contact-email" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Primary Email</label>
+                      <input
+                        id="contact-email"
+                        name="primaryEmail"
+                        type="email"
+                        required
+                        autoComplete="email"
+                        value={primaryEmail}
+                        onChange={(ev) => setPrimaryEmail(ev.target.value)}
+                        placeholder="solutions@enterprise.com"
+                        className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium"
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Market Sector</label>
@@ -113,18 +192,30 @@ export const JinjieberContact: React.FC = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Detailed Technical Request</label>
-                    <textarea placeholder="Please detail sizing, pressure ratings, and environmental specifications..." rows={5} className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium resize-none"></textarea>
+                    <label htmlFor="contact-technical" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 ml-1">Detailed Technical Request</label>
+                    <textarea
+                      id="contact-technical"
+                      name="technicalRequest"
+                      required
+                      value={technicalRequest}
+                      onChange={(ev) => setTechnicalRequest(ev.target.value)}
+                      placeholder="Please detail sizing, pressure ratings, and environmental specifications..."
+                      rows={5}
+                      className="w-full bg-white px-6 py-4 border border-zinc-200 focus:border-[#4f25e4] focus:ring-4 focus:ring-[#4f25e4]/5 outline-none transition-all font-medium resize-none"
+                    />
                   </div>
                   
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className={cn(
                       "group w-full flex items-center justify-center gap-3 bg-[#4f25e4] py-6 text-xs font-bold text-white uppercase tracking-[0.3em] shadow-2xl shadow-[#4f25e4]/30",
-                      "transition-all duration-500 hover:bg-zinc-900 hover:gap-6 active:scale-[0.98]"
+                      "transition-all duration-500 hover:bg-zinc-900 hover:gap-6 active:scale-[0.98]",
+                      isSubmitting && "opacity-70 cursor-wait pointer-events-none"
                     )}
                   >
-                    Initiate Technical Review <ChevronRight className="h-4 w-4" />
+                    {isSubmitting ? "Submitting…" : "Initiate Technical Review"}{" "}
+                    <ChevronRight className="h-4 w-4" />
                   </button>
                 </form>
               </div>

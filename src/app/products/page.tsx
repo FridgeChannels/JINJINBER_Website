@@ -39,11 +39,10 @@ function ProductsContent() {
       const subCatTitles = Array.from(new Set(parentItems.map(p => p.category)));
       
       const subGroups = subCatTitles.map(subCat => {
-        const mockCat = parentCat === "Valves" 
-          ? jinjieberMock.products.valves.find(v => v.title === subCat)
-          : parentCat === "Pumps"
-          ? jinjieberMock.products?.pumps?.find(p => p?.title === subCat)
-          : null;
+        const mockCat =
+          parentCat === "Valves"
+            ? jinjieberMock.products.valves.find((v) => v.title === subCat)
+            : null;
 
         return {
           title: subCat,
