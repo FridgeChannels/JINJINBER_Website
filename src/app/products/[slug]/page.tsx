@@ -7,17 +7,9 @@ import { SectionReveal } from "@/components/motion/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
-import { ArrowLeft, CheckCircle2, Factory, ShieldCheck, Zap } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-function pickSpecValue(
-  specifications: Array<{ key: string; value: string }>,
-  matcher: (keyLower: string) => boolean
-): string | null {
-  const hit = specifications.find((s) => matcher(s.key.trim().toLowerCase()));
-  return hit?.value ?? null;
-}
 
 export default function ProductDetailPage({
   params: paramsPromise,
@@ -30,28 +22,6 @@ export default function ProductDetailPage({
   if (!product) {
     notFound();
   }
-
-  const material =
-    pickSpecValue(product.specifications, (k) => k === "material") ??
-    pickSpecValue(product.specifications, (k) => k.includes("material")) ??
-    "—";
-
-  const process =
-    pickSpecValue(product.specifications, (k) => k === "process") ??
-    pickSpecValue(product.specifications, (k) => k.includes("process")) ??
-    "—";
-
-  const specification =
-    pickSpecValue(product.specifications, (k) => k === "size range") ??
-    pickSpecValue(product.specifications, (k) => k.includes("size range")) ??
-    pickSpecValue(product.specifications, (k) => k === "standard") ??
-    pickSpecValue(product.specifications, (k) => k.includes("standard")) ??
-    "—";
-
-  const application = product.purpose || "—";
-  const isValve = product.parentCategory === "Valves";
-  const isPump = product.parentCategory === "Pumps";
-  const isFitting = product.parentCategory === "Fittings";
 
   return (
     <PageShell currentPath="/products">

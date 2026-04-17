@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jinjieber",
+  title: "Jinjieber | Industrial Valves & Pumps Manufacturer Since 1988",
   description:
-    "Jinjieber is a world-class manufacturer and supplier of industrial valves, pumps, and fluid control solutions.",
+    "Global manufacturer of high-performance valves, pumps & fluid control solutions for oil & gas, municipal water, fire protection, and power industries. ISO 9001, API, UL/FM, AWWA certified. Trusted by engineers and contractors in 40+ countries.",
 };
 
 export default function RootLayout({

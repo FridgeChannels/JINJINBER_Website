@@ -8,9 +8,11 @@ export interface JinjieberCapabilitiesProps {
   embedded?: boolean;
 }
 
+type CapabilityCard = (typeof jinjieberMock.capabilities)[keyof typeof jinjieberMock.capabilities];
+
 export const JinjieberCapabilities: React.FC<JinjieberCapabilitiesProps> = ({ embedded }) => {
   const { capabilities } = jinjieberMock;
-  const caps = Object.values(capabilities);
+  const caps = Object.values(capabilities) as CapabilityCard[];
 
   return (
     <section
@@ -43,7 +45,7 @@ export const JinjieberCapabilities: React.FC<JinjieberCapabilitiesProps> = ({ em
         </div>
 
         <div className={cn("grid gap-12 md:grid-cols-2 lg:grid-cols-3", embedded ? "mt-16" : "mt-24")}>
-          {caps.map((cap: any, idx) => (
+          {caps.map((cap, idx) => (
             <div 
               key={idx} 
               className={cn(

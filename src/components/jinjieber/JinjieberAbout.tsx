@@ -1,8 +1,5 @@
-import Link from "next/link";
 import { jinjieberMock } from "@/mock/jinjieber";
-import { PixendSectionLabel } from "@/components/pixend/PixendPrimitives";
 import { ButtonLink } from "@/components/ui/Button";
-import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { cn } from "@/lib/cn";
 import Image from "next/image";
@@ -35,7 +32,7 @@ export const JinjieberAbout: React.FC<{
               </div>
               <div className="space-y-12 lg:w-2/3">
                 <h2 className="text-2xl font-bold leading-[1.2] text-zinc-900 md:text-3xl lg:text-4xl tracking-tight">
-                  "{about.mission}"
+                  &ldquo;{about.mission}&rdquo;
                 </h2>
                 {hideDeepDetails && (
                   <div className="pt-8">

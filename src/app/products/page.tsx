@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { PageShell } from "@/components/site/PageShell";
@@ -8,16 +7,21 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { products } from "@/mock/products";
 import { slugify } from "@/lib/slugify";
 import { cn } from "@/lib/cn";
-import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { jinjieberMock } from "@/mock/jinjieber";
 import { useMemo, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const PRODUCT_PARENT_CATEGORIES = ["Valves"] as const;
+type ProductParentCategory = (typeof PRODUCT_PARENT_CATEGORIES)[number];
+
+function isProductParentCategory(value: string): value is ProductParentCategory {
+  return (PRODUCT_PARENT_CATEGORIES as readonly string[]).includes(value);
+}
+
 function ProductsContent() {
   const searchParams = useSearchParams();
-  const categories = ["Valves" /*, "Pumps", "Fittings"*/] as const;
   const [activeCategory, setActiveCategory] = useState<string>("Valves");
   const [activeSubCategory, setActiveSubCategory] = useState<string>("");
 
@@ -25,7 +29,7 @@ function ProductsContent() {
     const catParam = searchParams.get("category");
     const subCatParam = searchParams.get("subCategory");
 
-    if (catParam && categories.includes(catParam as any)) {
+    if (catParam && isProductParentCategory(catParam)) {
       setActiveCategory(catParam);
     }
     if (subCatParam) {
@@ -34,7 +38,7 @@ function ProductsContent() {
   }, [searchParams]);
 
   const groupedProducts = useMemo(() => {
-    return categories.map((parentCat) => {
+    return PRODUCT_PARENT_CATEGORIES.map((parentCat) => {
       const parentItems = products.filter((p) => p.parentCategory === parentCat);
       const subCatTitles = Array.from(new Set(parentItems.map(p => p.category)));
       

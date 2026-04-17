@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { jinjieberMock } from "@/mock/jinjieber";
-import { PixendSectionLabel } from "@/components/pixend/PixendPrimitives";
 import { pixendVisual as pxn } from "@/lib/pixend-visual";
 import { cn } from "@/lib/cn";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";

@@ -10,17 +10,10 @@ import { cn } from "@/lib/cn";
 export const JinjieberHero: React.FC = () => {
   const { hero } = jinjieberMock;
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
   const images = hero.images || [];
 
   const nextSlide = useCallback(() => {
-    setDirection(1);
     setCurrent((prev) => (prev + 1) % images.length);
-  }, [images.length]);
-
-  const prevSlide = useCallback(() => {
-    setDirection(-1);
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
   useEffect(() => {
@@ -29,7 +22,7 @@ export const JinjieberHero: React.FC = () => {
   }, [nextSlide]);
 
   const variants = {
-    enter: (direction: number) => ({
+    enter: () => ({
       scale: 1.25,
       opacity: 0,
     }),
@@ -149,7 +142,6 @@ export const JinjieberHero: React.FC = () => {
             <button
               key={i}
               onClick={() => {
-                setDirection(i > current ? 1 : -1);
                 setCurrent(i);
               }}
               className="group relative flex flex-col items-center gap-4 py-2"
