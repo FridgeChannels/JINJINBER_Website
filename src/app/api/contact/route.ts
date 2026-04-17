@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = "mark@fridgechannels.com";
+const TO_EMAIL = "xhzhang@jinjieber.com";
 
 type ContactPayload = {
   contactName: string;
